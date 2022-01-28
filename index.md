@@ -25,7 +25,7 @@ Syntax highlighted code block
 
 [Link](telprompt://TheirPhoneNumber) and ![Image](src)
 
-[telprompt://TheirPhoneNumber]
+[test](telprompt://TheirPhoneNumber)
 
 ```
 
