@@ -26,7 +26,7 @@
     <div class="content-wrapper">
       <div class="container-fluid">
 
-        <div class="content">
+        <div class="content position-sticky">
           <h1 class="content-title font-size-22 text-center">
             <!-- font-size-22 = font-size: 2.2rem (22px) -->
             Dashboard
@@ -35,25 +35,35 @@
         </div>
 
         <div class="card">
-          <h2 class="card-title">
+          <h2 class="card-title text-center">
             Peripheral Hospitals
           </h2>
 
-          <div class="row">
-            <div class="col-3 m-5">
-              <button class="btn btn-primary" type="button">Primary</button>
-            </div>
-            <div class="col-3 m-5">
-              <button class="btn btn-primary" type="button">
-                Pimary</button>
-            </div>
-            <div class="col-3 m-5">
-              <button class="btn btn-primary" type="button">Primary</button>
-            </div>
-            <div class="col-3 m-5">
-              <button class="btn btn-primary" type="button">Primary</button>
+
+
+          <div class="overflow-auto w-full h-100">
+            <!-- w-200 = width: 20rem (200px), h-100 = height: 10rem (100px) -->
+            <div class="w-full h-200">
+              <!-- w-300 = width: 30rem (300px), h-200 = height: 20rem (200px) -->
+              <div class="row ">
+                <div class="col-3  m-5">
+                  <button class="btn btn-block btn-primary" type="button">Bath</button>
+                </div>
+                <div class="col-3 m-5">
+                  <button class="btn  btn-block btn-primary" type="button">
+                    Pimary</button>
+                </div>
+                <div class="col-3 m-5">
+                  <button class="btn btn-block btn-primary" type="button">Primary</button>
+                </div>
+                <div class="col-3 m-5">
+                  <button class="btn btn-block btn-primary" type="button">Primary</button>
+                </div>
+
+              </div>
             </div>
           </div>
+          <!-- Overflow auto -->
 
 
 
@@ -64,11 +74,6 @@
 
       </div>
 
-      <!-- Most commonly used buttons -->
-      <button class="btn" type="button">Default</button>
-      <button class="btn btn-primary" type="button">Primary</button>
-      <button class="btn btn-danger" type="button">Danger</button>
-      <button class="btn btn-link" type="button">Link</button>
     </div>
     <!-- Content wrapper end -->
 
