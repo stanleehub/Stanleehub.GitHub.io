@@ -1,0 +1,34 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  column-gap: 10px;
+  row-gap: 15px;
+}
+
+a:link {
+  text-decoration: none;
+  color: orange;
+}
+
+.searchbox {
+  margin-left: 15%;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#phonebook {}
+
+#dir {}
+
+/* input[type=text] {
+  width: 30%;
+  -webkit-transition: width 0.15s ease-in-out;
+  transition: width 0.15s ease-in-out;
+} */
+
+/* When the input field gets focus,
+    change its width to 100% */
+/* input[type=text]:focus {
+  width: 70%;
+} */

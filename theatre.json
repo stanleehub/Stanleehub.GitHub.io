@@ -1,0 +1,39 @@
+[
+  {
+    "Location": "Theatre 1",
+    "Type": "Ext",
+    "Number": "28501",
+    "Notes": "",
+    "Tag": "Local"
+  },
+  {
+    "Location": "Theatre 2",
+    "Type": "Ext",
+    "Number": "28502",
+    "Notes": ""
+  },
+  {
+    "Location": "Theatre 3",
+    "Type": "ext",
+    "Number": "28503",
+    "Notes": ""
+  },
+  {
+    "Location": "Theatre 4",
+    "Type": "ext",
+    "Number": "28560",
+    "Notes": ""
+  },
+  {
+    "Location": "Th Recovery",
+    "Type": "Ext",
+    "Number": "28500",
+    "Notes": ""
+  },
+  {
+    "Location": "Theatre Coordinator",
+    "Type": "Bleep",
+    "Number": "2025",
+    "Notes": ""
+  }
+]
