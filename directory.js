@@ -1,5 +1,5 @@
 function loadDirs() {
-  var alldirs = ["theatre", "external"]
+  var alldirs = ["theatre", "external","ward","imaging","lab","referral"]
 
   alldirs.forEach(function (item, index, array) {
 
@@ -52,22 +52,31 @@ function loadDirectory(data, elid) {
 
     dir.className = "directory col-12 col-md-3 col-xl-3"
     dir.innerHTML = '<div class="directoryCard">' +
-      '<div class="title text-wrap searchme">' + data[i].Location + '</div>' +
+      '<div class="title text-wrap searchme">' + data[i].Location + '<br><small>' + data[i].Notes + '</small></div>' +
       '<div class="details">' + data[i].Number + '</div>' +
       '</div>'
-
-
     div.appendChild(dir)
 
+    var action = data[i].Tag
 
-    linka = document.createElement('a')
-    linka.className = "callbutton fas fa-phone-square"
-    linka.innerHTML = ""
-    linka.href = 'telprompt://' + data[i].Number
-    linka.id = data[i].Number
-
-    // document.getElementById("dir").appendChild(node)
-    dir.lastChild.appendChild(linka);
+    if (action === 'cancall') {
+      console.log(action);
+      linka = document.createElement('a')
+      linka.className = "callbutton las la-phone" //fas fa-phone"
+      linka.innerHTML = ""
+      linka.href = 'telprompt://' + data[i].Number
+      linka.id = data[i].Number
+      // document.getElementById("dir").appendChild(node)
+      dir.lastChild.appendChild(linka);
+    } else if (action === '') {
+      var linkb = document.createElement('i')
+      linkb.className = "las la-tty"
+      linkb.style = "font-size:32px;"
+      linkb.innerHTML = ""
+      linkb.id = data[i].Number
+      dir.lastChild.appendChild(linkb)
+      console.log(action);
+    }
 
   }
 

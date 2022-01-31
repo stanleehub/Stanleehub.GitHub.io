@@ -8,7 +8,8 @@
   <meta name="viewport" content="width=device-width" />
 
   <!-- 'Vendor CSS' -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <link rel="stylesheet"
+    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
   <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon.min.css" rel="stylesheet" />
 
   <!-- MY CSS -->
@@ -24,7 +25,7 @@
       <!-- Reference: https://www.gethalfmoon.com/docs/navbar#navbar-fixed-bottom -->
       <button class="btn btn-action mr-5" type="button" onclick="halfmoon.toggleDarkMode()"
         aria-label="Toggle dark mode">
-        <i class="fas fa-moon" aria-hidden="true"></i>
+        <i class="lar la-moon" style="font-size: 32px;" aria-hidden="true"></i>
       </button>
 
       <div class="navbar-content d-md-none ml-auto">
@@ -48,18 +49,12 @@
       </div>
 
       <!-- SEARCH BOX -->
-      <form class="form-inline ml-auto" action="..." method="...">
-        <!-- ml-auto = margin-left: auto -->
-        <div class="input-group searchbox">
-          <input id="searchbar" type="text" onkeyup="search_dir()" class="form-control" placeholder="Search page">
-          <div class="input-group-append">
-            <button class="btn" type="submit">
-              <i class="fa fa-search" aria-hidden="true"></i>
-              <span class="sr-only">Search docs</span> <!-- sr-only = show only on screen readers -->
-            </button>
-          </div>
-        </div>
-      </form>
+
+      <!-- ml-auto = margin-left: auto -->
+      <div class="input-group searchbox">
+        <input id="searchbar" type="text" onkeyup="search_dir()" class="form-control" placeholder="Search page">
+
+      </div>
 
     </nav>
 
@@ -68,20 +63,85 @@
     <div class="content-wrapper">
       <div class="container-fluid">
 
-        <section id="section1" class="">
-        <h2>Home</h2>
+        <!-- <section id="section1" class="">
+          <h2>Home</h2>
 
         </section>
 
         <section id="section2">
           <h2>Apps</h2>
-        </section>
+        </section> -->
 
         <section id="section3">
           <h2 class="text-center">What Number</h2>
 
+          <!-- MYTEAM TAB -->
+          <details class="collapse-panel mw-full" closed>
+            <summary class="collapse-header">
+              My Team
+            </summary>
+            <div class="collapse-content p-0">
+              <div id="myteam" class="row"></div>
+            </div>
+          </details>
+
+
+          <!-- WARDS TAB -->
+          <details class="collapse-panel mw-full" closed>
+            <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100%, mt-20 = margin-top: 2rem (20px) -->
+            <summary class="collapse-header">
+              Wards
+            </summary>
+            <div class="collapse-content p-0">
+              <div id="ward" class="row"></div>
+            </div>
+          </details>
+
+          <!-- IMAGING TAB -->
+          <details class="collapse-panel mw-full" closed>
+            <summary class="collapse-header">
+              Radiology, ECG & ECHO
+            </summary>
+            <div class="collapse-content p-0">
+              <div id="imaging" class="row"></div>
+            </div>
+          </details>
+
+          <!-- LABS TAB -->
+          <details class="collapse-panel mw-full" closed>
+            <summary class="collapse-header">
+              Labs
+            </summary>
+            <div class="collapse-content p-0">
+              <div id="lab" class="row"></div>
+            </div>
+          </details>
+
+          <!-- LABS TAB -->
+          <details class="collapse-panel mw-full" closed>
+            <summary class="collapse-header">
+              Other Teams
+            </summary>
+            <div class="collapse-content p-0">
+              <div id="referral" class="row"></div>
+            </div>
+          </details>
+
+          <!-- THEATRE TAB -->
+          <details class="collapse-panel mw-full" closed>
+            <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100%, mt-20 = margin-top: 2rem (20px) -->
+            <summary class="collapse-header">
+              Theatres
+            </summary>
+            <div class="collapse-content p-0">
+
+              <div id="theatre" class="row"></div>
+
+            </div>
+          </details>
+
           <!-- EXTERNAL HOSPITALS -->
-          <details class="collapse-panel mw-full" open>
+          <details class="collapse-panel mw-full" closed>
             <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100%, mt-20 = margin-top: 2rem (20px) -->
             <summary class="collapse-header">
               External Hospitals </summary>
@@ -94,20 +154,7 @@
             </div>
           </details>
 
-          <!-- THEATRE TAB -->
-          <details class="collapse-panel mw-full p-15" open>
-            <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100%, mt-20 = margin-top: 2rem (20px) -->
-            <summary class="collapse-header">
-              Theatres
-            </summary>
-            <div class="collapse-content">
 
-              <div class="card h-lg-300 overflow-y-lg-auto">
-                <div id="theatre" class="row row-eq-spacing"></div>
-              </div>
-
-            </div>
-          </details>
         </section>
 
 

@@ -3,96 +3,112 @@
     "Location": "Barnstaple",
     "Type": "Ext",
     "Number": "#6211",
-    "Notes": "2h"
+    "Notes": "2h",
+    "Tag": ""
   },
   {
     "Location": "Bath",
     "Type": "Ext",
     "Number": "#6108",
-    "Notes": "30min"
+    "Notes": "30min",
+    "Tag": ""
   },
   {
     "Location": "Birmingham",
     "Type": "Ext",
     "Number": "#6315",
-    "Notes": "1h 45min"
+    "Notes": "1h 45min",
+    "Tag": ""
   },
   {
     "Location": "Cardiff",
     "Type": "Ext",
     "Number": "#6214",
-    "Notes": "1h"
+    "Notes": "1h",
+    "Tag": ""
   },
   {
     "Location": "Cheltenham",
     "Type": "Ext",
     "Number": "#6217",
-    "Notes": "1h"
+    "Notes": "1h",
+    "Tag": ""
   },
   {
     "Location": "Exeter",
     "Type": "Ext",
     "Number": "#6219",
-    "Notes": "1h 30min"
+    "Notes": "1h 30min",
+    "Tag": ""
   },
   {
     "Location": "Frenchay",
     "Type": "Ext",
     "Number": "#6215 or #6780",
-    "Notes": "15min"
+    "Notes": "15min",
+    "Tag": ""
   },
   {
     "Location": "Gloucester",
     "Type": "Ext",
     "Number": "#6220",
-    "Notes": "1h"
+    "Notes": "1h",
+    "Tag": ""
   },
   {
     "Location": "Derriford Plymouth",
     "Type": "Ext",
     "Number": "#6231",
-    "Notes": "2h 15min"
+    "Notes": "2h 15min",
+    "Tag": ""
   },
   {
     "Location": "Swindon",
     "Type": "Ext",
     "Number": "#6250",
-    "Notes": "1h"
+    "Notes": "1h",
+    "Tag": ""
   },
   {
     "Location": "Taunton",
     "Type": "Ext",
     "Number": "#6110",
-    "Notes": "1h"
+    "Notes": "1h",
+    "Tag": ""
   },
   {
     "Location": "Torbay",
     "Type": "Ext",
     "Number": "#6251",
-    "Notes": "2h"
+    "Notes": "2h",
+    "Tag": ""
   },
   {
     "Location": "Truro, Royal Cornwall",
     "Type": "Ext",
     "Number": "#6238",
-    "Notes": "3h 15min"
+    "Notes": "3h 15min",
+    "Tag": ""
   },
   {
     "Location": "Weston G",
     "Type": "Ext",
     "Number": "#6111",
-    "Notes": "45min"
+    "Notes": "45min",
+    "Tag": ""
   },
   {
     "Location": "Yeovil",
     "Type": "Ext",
     "Number": "#6112",
-    "Notes": "1h 15min"
+    "Notes": "1h 15min",
+    "Tag": ""
   },
   {
     "Location": "Great Ormond Street",
     "Type": "Ext",
     "Number": "#6319",
-    "Notes": ""
+    "Notes": "",
+    "Tag": ""
   }
 ]

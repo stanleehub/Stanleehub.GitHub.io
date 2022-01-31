@@ -19,24 +19,33 @@
 
 .searchbox {
   margin-left: 15%;
-  padding: 15px;
+  /* padding: 15px; */
+  width:10px
+  padding-right: 15px;
   border-radius: 10px;
 }
 
 section{
-  padding:15px;
+  padding:25px;
   height: 50vh;
+}
+
+details{
+  margin-bottom: 20px;
 }
 
 .directoryCard{
   display: flex;
   justify-content: space-between;
 
-  border: 1px solid grey;
+  border: 0.5px solid black;
   border-radius: 15px;
-  box-shadow: 2px 2px 5px grey;
-  padding:10px;
-  margin: 5px;
+  box-shadow: 2px 2px 5px black;
+  padding-left:15px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  padding-right: 20px;
+  margin: 10px;
   
   
 }
