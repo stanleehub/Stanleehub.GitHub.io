@@ -1,15 +1,21 @@
-.container {
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+
+:root{
+  font-family:'Open Sans';
+}
+/* .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
   column-gap: 10px;
   row-gap: 15px;
-}
+} */
 
-a:link {
+/* a:link {
   text-decoration: none;
   color: orange;
-}
+} */
 
 .searchbox {
   margin-left: 15%;
@@ -17,9 +23,37 @@ a:link {
   border-radius: 10px;
 }
 
-#phonebook {}
+.directoryCard{
 
-#dir {}
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 1px solid grey;
+  border-radius: 15px;
+  box-shadow: 2px 2px 5px grey;
+  padding:10px;
+  margin: 5px;
+  
+  
+}
+
+
+.directoryCard .title{
+  /* display:inline; */
+  /* margin: auto; */
+  font-weight: 700;
+  
+}
+
+.directoryCard .detail{
+  display:inline;
+  margin: auto;
+  
+}
+
+.directoryCard .callbutton{
+  font-size: 2em;
+  
+}
 
 /* input[type=text] {
   width: 30%;

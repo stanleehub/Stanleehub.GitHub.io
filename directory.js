@@ -48,24 +48,27 @@ function loadDirectory(data, elid) {
     dir = document.createElement('div')
     dir.id = elid   //"
 
+    var dirContent = data[i].Location + data[i].Number
 
-    dir.className = "directory col-12 col-md-4 col-xl-3"
-    dir.innerHTML = '<div class="card">' +
-      '<h3 class="card-title text-wrap searchme">' + data[i].Location + '</h3>' +
-      '<p class="details">' + data[i].Type + '<span>: </span>' + data[i].Number + '</p>' +
+    dir.className = "directory col-12 col-md-3 col-xl-3"
+    dir.innerHTML = '<div class="directoryCard">' +
+      '<div class="title text-wrap searchme">' + data[i].Location + '</div>' +
+      '<div class="details" style="padding-left: 10px">' + data[i].Number + '</div>' +
       '</div>'
+
 
     div.appendChild(dir)
 
 
     linka = document.createElement('a')
-    linka.className = "fas fa-phone-square"
-    linka.innerHTML = "Call"
+    linka.className = "callbutton fas fa-phone-square"
+    linka.innerHTML = ""
     linka.href = 'telprompt://' + data[i].Number
     linka.id = data[i].Number
 
     // document.getElementById("dir").appendChild(node)
     dir.lastChild.appendChild(linka);
+
   }
 
 }
