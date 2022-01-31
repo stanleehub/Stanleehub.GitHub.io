@@ -18,51 +18,34 @@
 <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars" data-dm-shortcut-enabled="true"
   data-set-preferred-mode-onload="true">
 
-  <div class="page-wrapper with-navbar-fixed-bottom">
-    <div class="content-wrapper">
-      <div class="container-fluid">
-        <h1 class="text-center">What Number</h1>
+  <div class="page-wrapper with-navbar">
 
-        <!-- EXTERNAL HOSPITALS -->
-        <details class="collapse-panel mw-full p-15" open>
-          <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100%, mt-20 = margin-top: 2rem (20px) -->
-          <summary class="collapse-header">
-            External Hospitals </summary>
-          <div class="collapse-content p-0">
-
-
-            <div id="external" class="row">
-            </div> <!--  row-eq-spacing -->
-
-          </div>
-        </details>
-
-        <!-- THEATRE TAB -->
-        <details class="collapse-panel mw-full p-15" open>
-          <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100%, mt-20 = margin-top: 2rem (20px) -->
-          <summary class="collapse-header">
-            Theatres
-          </summary>
-          <div class="collapse-content">
-
-            <div class="card h-lg-300 overflow-y-lg-auto">
-              <div id="theatre" class="row row-eq-spacing"></div>
-            </div>
-
-          </div>
-        </details>
-
-
-      </div>
-    </div>
-
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-fixed-bottom">
+    <nav class="navbar">
       <!-- Reference: https://www.gethalfmoon.com/docs/navbar#navbar-fixed-bottom -->
       <button class="btn btn-action mr-5" type="button" onclick="halfmoon.toggleDarkMode()"
         aria-label="Toggle dark mode">
         <i class="fas fa-moon" aria-hidden="true"></i>
       </button>
+
+      <div class="navbar-content d-md-none ml-auto">
+        <!-- d-md-none = display: none on medium screens and up (width > 768px), ml-auto = margin-left: auto -->
+        <div class="dropdown with-arrow">
+          <button class="btn" data-toggle="dropdown" type="button" id="navbar-dropdown-toggle-btn-1">
+            Menu
+            <i class="fa fa-angle-down" aria-hidden="true"></i>
+          </button>
+          <div class="dropdown-menu w-200" aria-labelledby="navbar-dropdown-toggle-btn-1">
+            <!-- w-200 = width: 20rem (200px) -->
+            <a href="#section1" class="dropdown-item">Home</a>
+            <div class="dropdown-divider"></div>
+            <a href="#section2" class="dropdown-item">Apps</a>
+            <a href="#section3" class="dropdown-item">Directory</a>
+
+
+
+          </div>
+        </div>
+      </div>
 
       <!-- SEARCH BOX -->
       <form class="form-inline ml-auto" action="..." method="...">
@@ -79,6 +62,59 @@
       </form>
 
     </nav>
+
+
+
+    <div class="content-wrapper">
+      <div class="container-fluid">
+
+        <section id="section1" class="">
+        <h2>Home</h2>
+
+        </section>
+
+        <section id="section2">
+          <h2>Apps</h2>
+        </section>
+
+        <section id="section3">
+          <h2 class="text-center">What Number</h2>
+
+          <!-- EXTERNAL HOSPITALS -->
+          <details class="collapse-panel mw-full" open>
+            <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100%, mt-20 = margin-top: 2rem (20px) -->
+            <summary class="collapse-header">
+              External Hospitals </summary>
+            <div class="collapse-content p-0">
+
+
+              <div id="external" class="row">
+              </div> <!--  row-eq-spacing -->
+
+            </div>
+          </details>
+
+          <!-- THEATRE TAB -->
+          <details class="collapse-panel mw-full p-15" open>
+            <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100%, mt-20 = margin-top: 2rem (20px) -->
+            <summary class="collapse-header">
+              Theatres
+            </summary>
+            <div class="collapse-content">
+
+              <div class="card h-lg-300 overflow-y-lg-auto">
+                <div id="theatre" class="row row-eq-spacing"></div>
+              </div>
+
+            </div>
+          </details>
+        </section>
+
+
+
+      </div>
+    </div>
+
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>

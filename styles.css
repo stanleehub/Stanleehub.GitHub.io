@@ -23,10 +23,15 @@
   border-radius: 10px;
 }
 
-.directoryCard{
+section{
+  padding:15px;
+  height: 50vh;
+}
 
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+.directoryCard{
+  display: flex;
+  justify-content: space-between;
+
   border: 1px solid grey;
   border-radius: 15px;
   box-shadow: 2px 2px 5px grey;

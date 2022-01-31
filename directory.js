@@ -53,7 +53,7 @@ function loadDirectory(data, elid) {
     dir.className = "directory col-12 col-md-3 col-xl-3"
     dir.innerHTML = '<div class="directoryCard">' +
       '<div class="title text-wrap searchme">' + data[i].Location + '</div>' +
-      '<div class="details" style="padding-left: 10px">' + data[i].Number + '</div>' +
+      '<div class="details">' + data[i].Number + '</div>' +
       '</div>'
 
 
