@@ -19,140 +19,180 @@
 <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars" data-dm-shortcut-enabled="true"
   data-set-preferred-mode-onload="true">
 
-  <div class="page-wrapper with-navbar">
 
-    <nav class="navbar">
-      <!-- Reference: https://www.gethalfmoon.com/docs/navbar#navbar-fixed-bottom -->
-      <button class="btn btn-action mr-5" type="button" onclick="halfmoon.toggleDarkMode()"
-        aria-label="Toggle dark mode">
-        <i class="lar la-moon" style="font-size: 32px;" aria-hidden="true"></i>
-      </button>
+  <div class="page-wrapper with-navbar-fixed-bottom">
 
-      <div class="navbar-content d-md-none ml-auto">
-        <!-- d-md-none = display: none on medium screens and up (width > 768px), ml-auto = margin-left: auto -->
-        <div class="dropdown with-arrow">
-          <button class="btn" data-toggle="dropdown" type="button" id="navbar-dropdown-toggle-btn-1">
-            Menu
-            <i class="fa fa-angle-down" aria-hidden="true"></i>
-          </button>
-          <div class="dropdown-menu w-200" aria-labelledby="navbar-dropdown-toggle-btn-1">
-            <!-- w-200 = width: 20rem (200px) -->
-            <a href="#section1" class="dropdown-item">Home</a>
-            <div class="dropdown-divider"></div>
-            <a href="#section2" class="dropdown-item">Apps</a>
-            <a href="#section3" class="dropdown-item">Directory</a>
-
-
-
+    <!-- AABOUT MODAL -->
+    <div class="modal" id="aboutmodal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <a href="#" class="close" role="button" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </a>
+          <h5 class="modal-title">About What Number v1</h5>
+          <p>
+            This Applet was created by Andre Stanley.<br>Available for <span class="text-success">iPhones</span> only.
+          </p>
+          <div class="text-right mt-20">
+            <!-- text-right = text-align: right, mt-20 = margin-top: 2rem (20px) -->
+            <!-- <a href="#" class="btn mr-5" role="button">Close</a> -->
+            <!-- <a href="#" class="btn btn-primary" role="button">I understand</a> -->
           </div>
         </div>
       </div>
-
-      <!-- SEARCH BOX -->
-
-      <!-- ml-auto = margin-left: auto -->
-      <div class="input-group searchbox">
-        <input id="searchbar" type="text" onkeyup="search_dir()" class="form-control" placeholder="Search page">
-
-      </div>
-
-    </nav>
+    </div>
 
 
-
+    <!-- MAIN PAGE SECTON   -->
     <div class="content-wrapper">
+
+
       <div class="container-fluid">
 
-        <!-- <section id="section1" class="">
-          <h2>Home</h2>
+        <div class="custom-shape-divider-top-1643772844">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+            preserveAspectRatio="none">
+            <path
+              d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+              opacity=".25" class="shape-fill"></path>
+            <path
+              d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+              opacity=".5" class="shape-fill"></path>
+            <path
+              d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+              class="shape-fill"></path>
+          </svg>
+        </div>
+        
+        <div class="custom-shape-divider-bottom-1643773069">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+              <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+              <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+              <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+          </svg>
+      </div>
+
+        <section id="section1">
+        
+
+          <h2 class="text-center text-primary mb-20">Who Bleeped ?</h2>
+          <div class="row d-block p-10 bleepresult">
+
+            <h3 class="text-center">Location...</h3>
+            <div class="text-center text-success  h-200" id="bleeplist"></div>
+          </div>
+          <div class="row d-block mt-20">
+            <div class="col">
+              <div class="card form-group text-center">
+                <input id="bleepinput" type="number" name="bleep" maxlength="5"
+                  class="form-control form-control-lg mw-full mb-10" placeholder="Enter the 5-digit bleep"
+                  onkeyup="findbleep()">
+                <button class="btn btn-lg btn-danger text-white" type="button" onclick="callbleep()"><i
+                    class="las la-phone"></i> Call</button>
+              </div>
+            </div>
+
+          </div>
 
         </section>
 
-        <section id="section2">
-          <h2>Apps</h2>
-        </section> -->
 
         <section id="section3">
-          <h2 class="text-center">What Number</h2>
+          <h2 class="text-center text-primary">What Number</h2>
+          <div class="collapse-group w-500 mw-full">
 
-          <!-- MYTEAM TAB -->
-          <details class="collapse-panel mw-full" closed>
-            <summary class="collapse-header">
-              My Team
-            </summary>
-            <div class="collapse-content p-0">
-              <div id="myteam" class="row"></div>
-            </div>
-          </details>
-
-
-          <!-- WARDS TAB -->
-          <details class="collapse-panel mw-full" closed>
-            <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100%, mt-20 = margin-top: 2rem (20px) -->
-            <summary class="collapse-header">
-              Wards
-            </summary>
-            <div class="collapse-content p-0">
-              <div id="ward" class="row"></div>
-            </div>
-          </details>
-
-          <!-- IMAGING TAB -->
-          <details class="collapse-panel mw-full" closed>
-            <summary class="collapse-header">
-              Radiology, ECG & ECHO
-            </summary>
-            <div class="collapse-content p-0">
-              <div id="imaging" class="row"></div>
-            </div>
-          </details>
-
-          <!-- LABS TAB -->
-          <details class="collapse-panel mw-full" closed>
-            <summary class="collapse-header">
-              Labs
-            </summary>
-            <div class="collapse-content p-0">
-              <div id="lab" class="row"></div>
-            </div>
-          </details>
-
-          <!-- LABS TAB -->
-          <details class="collapse-panel mw-full" closed>
-            <summary class="collapse-header">
-              Other Teams
-            </summary>
-            <div class="collapse-content p-0">
-              <div id="referral" class="row"></div>
-            </div>
-          </details>
-
-          <!-- THEATRE TAB -->
-          <details class="collapse-panel mw-full" closed>
-            <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100%, mt-20 = margin-top: 2rem (20px) -->
-            <summary class="collapse-header">
-              Theatres
-            </summary>
-            <div class="collapse-content p-0">
-
-              <div id="theatre" class="row"></div>
-
-            </div>
-          </details>
-
-          <!-- EXTERNAL HOSPITALS -->
-          <details class="collapse-panel mw-full" closed>
-            <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100%, mt-20 = margin-top: 2rem (20px) -->
-            <summary class="collapse-header">
-              External Hospitals </summary>
-            <div class="collapse-content p-0">
+            <!-- MYTEAM TAB -->
+            <details class="collapse-panel mw-full" closed>
+              <summary class="collapse-header">
+                <strong>My Team</strong>
+                <br />
+                <span class="text-muted">Paeds Surgery, Reg bleeps, Secretares</span>
+              </summary>
+              <div class="collapse-content p-0">
+                <div id="myteam" class="row"></div>
+              </div>
+            </details>
 
 
-              <div id="external" class="row">
-              </div> <!--  row-eq-spacing -->
+            <!-- WARDS TAB -->
+            <details class="collapse-panel mw-full" closed>
+              <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100%, mt-20 = margin-top: 2rem (20px) -->
+              <summary class="collapse-header">
+                <strong>Wards</strong>
+                <br>
+                <span class="text-muted">BCH and NICU wards</span>
 
-            </div>
-          </details>
+              </summary>
+              <div class="collapse-content p-0">
+                <div id="ward" class="row"></div>
+              </div>
+            </details>
+
+            <!-- IMAGING TAB -->
+            <details class="collapse-panel mw-full" closed>
+              <summary class="collapse-header">
+                <strong>Imaging</strong>
+                <br>
+                <span class="text-muted">Radiology, ECG & ECHO</span>
+              </summary>
+              <div class="collapse-content p-0">
+                <div id="imaging" class="row"></div>
+              </div>
+            </details>
+
+            <!-- LABS TAB -->
+            <details class="collapse-panel mw-full" closed>
+              <summary class="collapse-header">
+                <strong>Labs</strong>
+                <br>
+                <span class="text-muted">Chem, Micro B, Histopath, Genetics</span>
+              </summary>
+              <div class="collapse-content p-0">
+                <div id="lab" class="row"></div>
+              </div>
+            </details>
+
+            <!-- LABS TAB -->
+            <details class="collapse-panel mw-full" closed>
+              <summary class="collapse-header">
+                <strong>Other Teams</strong>
+                <br>
+                <span class="text-muted">Other Teams</span>
+              </summary>
+              <div class="collapse-content p-0">
+                <div id="referral" class="row"></div>
+              </div>
+            </details>
+
+            <!-- THEATRE TAB -->
+            <details class="collapse-panel mw-full" closed>
+              <summary class="collapse-header">
+                <strong>Theatres</strong>
+                <br>
+                <span class="text-muted">Theatre Related</span>
+              </summary>
+              <div class="collapse-content p-0">
+                <div id="theatre" class="row"></div>
+              </div>
+            </details>
+
+            <!-- EXTERNAL HOSPITALS -->
+            <details class="collapse-panel mw-full" closed>
+              <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100%, mt-20 = margin-top: 2rem (20px) -->
+              <summary class="collapse-header">
+                <strong>
+                  External Hospitals
+                </strong>
+                <br>
+                <span class="text-muted">Referral hospitals</span>
+              </summary>
+              <div class="collapse-content p-0">
+                <div id="external" class="row">
+                </div> <!--  row-eq-spacing -->
+
+              </div>
+            </details>
+          </div>
 
 
         </section>
@@ -162,10 +202,42 @@
       </div>
     </div>
 
+    <!-- NAVBAR SECTION  -->
+    <nav class="navbar navbar-fixed-bottom">
+      <button class="btn btn-action mr-5" type="button" onclick="halfmoon.toggleDarkMode()"
+        aria-label="Toggle dark mode">
+        <i class="lar la-moon" style="font-size: 32px;"></i>
+      </button>
+
+      <div class="navbar-content">
+        <!-- d-md-none = display: none on medium screens and up (width > 768px), ml-auto = margin-left: auto -->
+        <div class="dropdown dropup with-arrow">
+          <button class="btn" data-toggle="dropdown" type="button" id="navbar-fixed-bottom-dropdown-toggle">
+            Menu
+            <i class="la la-angle-up" aria-hidden="true"></i>
+          </button>
+          <div class="dropdown-menu" aria-labelledby=id="navbar-fixed-bottom-dropdown-toggle">
+            <a href="#section1" class="dropdown-item">Who Bleeped?</a>
+            <div class="dropdown-divider"></div>
+            <!-- <a href="#section2" class="dropdown-item">Apps</a> -->
+            <a href="#section3" class="dropdown-item">Directory</a>
+            <div class="dropdown-divider"></div>
+            <a href="#aboutmodal" class="dropdown-item" role="button">About</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEARCH BOX -->
+      <div class="input-group searchbox">
+        <input id="searchbar" type="text" onkeyup="search_dir()" class="form-control" placeholder="Search page">
+      </div>
+
+    </nav>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
   <script src="directory.js"></script>
+  <script src="whatbleep.js"></script>
 
   <script>
 

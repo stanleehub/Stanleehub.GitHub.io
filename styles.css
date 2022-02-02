@@ -1,46 +1,89 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
-
-:root{
-  font-family:'Open Sans';
+html{
+  font-family:"Open Sans", sans-serif;
+  box-sizing: border-box;
 }
-/* .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  column-gap: 10px;
-  row-gap: 15px;
-} */
 
-/* a:link {
-  text-decoration: none;
-  color: orange;
-} */
 
-.searchbox {
-  margin-left: 15%;
-  /* padding: 15px; */
-  width:10px
+section{
+  position: relative;
+  padding:25px;
+  height: 100vh;
+
+}
+
+
+.custom-shape-divider-top-1643772844 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+
+.custom-shape-divider-bottom-1643773069 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1643773069 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 259px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1643773069 .shape-fill {
+  fill: #A4E660;
+}
+
+
+
+.searchbox{
+  margin-left: 40%;
+  width:200px;
   padding-right: 15px;
   border-radius: 10px;
 }
 
-section{
-  padding:25px;
-  height: 50vh;
+
+
+
+h2,.bleepresult {
+  /* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-details{
-  margin-bottom: 20px;
+
+.mark{
+  border: 2px solid black;
 }
+
+
+
+
 
 .directoryCard{
   display: flex;
   justify-content: space-between;
 
-  border: 0.5px solid black;
+  /* border: 0.5px solid black; */
   border-radius: 15px;
-  box-shadow: 2px 2px 5px black;
+  box-shadow: 1px 1px 8px black;
   padding-left:15px;
   padding-top: 10px;
   padding-bottom: 8px;
@@ -67,6 +110,11 @@ details{
 .directoryCard .callbutton{
   font-size: 2em;
   
+}
+
+.directoryCard i{
+  font-size: 24px;
+  padding-top: ;
 }
 
 /* input[type=text] {

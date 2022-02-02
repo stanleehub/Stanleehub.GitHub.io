@@ -1,18 +1,18 @@
 function loadDirs() {
-  var alldirs = ["theatre", "external","ward","imaging","lab","referral"]
+  var alldirs = ["theatre", "external", "ward", "imaging", "lab", "referral", "myteam"]
 
   alldirs.forEach(function (item, index, array) {
 
 
     var fname = item + '.json'
 
-    console.log(fname)
+    // console.log(fname)
     fetch(fname).then(response => {
       return response.json();
     }).then(jsondata => {
       var element_id = item
 
-      console.log(item);
+      // console.log(item);
       loadDirectory(jsondata, element_id)
     })
       .catch(err => { console.log('Error: ' + err) });
@@ -52,7 +52,8 @@ function loadDirectory(data, elid) {
 
     dir.className = "directory col-12 col-md-3 col-xl-3"
     dir.innerHTML = '<div class="directoryCard">' +
-      '<div class="title text-wrap searchme">' + data[i].Location + '<br><small>' + data[i].Notes + '</small></div>' +
+      '<div class="title text-wrap searchme"><span><i class="lar la-address-book text-primary"></i></span>' +
+      data[i].Location + '<br><small class="text-muted">' + data[i].Notes + '</small></div>' +
       '<div class="details">' + data[i].Number + '</div>' +
       '</div>'
     div.appendChild(dir)
@@ -60,11 +61,11 @@ function loadDirectory(data, elid) {
     var action = data[i].Tag
 
     if (action === 'cancall') {
-      console.log(action);
+      // console.log(action);
       linka = document.createElement('a')
-      linka.className = "callbutton las la-phone" //fas fa-phone"
+      linka.className = "callbutton las la-phone text-success" //fas fa-phone"
       linka.innerHTML = ""
-      linka.href = 'telprompt://' + data[i].Number
+      linka.href = 'telprompt://011734' + data[i].Number
       linka.id = data[i].Number
       // document.getElementById("dir").appendChild(node)
       dir.lastChild.appendChild(linka);
@@ -75,7 +76,7 @@ function loadDirectory(data, elid) {
       linkb.innerHTML = ""
       linkb.id = data[i].Number
       dir.lastChild.appendChild(linkb)
-      console.log(action);
+      // console.log(action);
     }
 
   }
