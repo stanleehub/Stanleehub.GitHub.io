@@ -73,10 +73,19 @@ function showresult(result, ftype) {
       break
   }
 
-  let answer = document.createElement('h4')
-  answer.className = "text-primary"
-  answer.innerHTML = show + "<br>" + "<h5>" + desc + "</h5>"
+  let answer = document.createElement('div')
+  // answer.className = "text-primary text-center"
+  answer.innerHTML = '<strong>Rate to give: <span class="text-success">' + show + '</span></strong>' +
+  '<br>'+
+    + desc
 
+  //   <div>
+  //   <strong>Title</strong>
+  //   <br>
+  //   Amazing
+  //   <br>
+  //   dsds
+  // </div>
   resultel.appendChild(answer)
 }
 
