@@ -5,7 +5,7 @@ function callbleep() {
 
   // alert(bleep)
   if (num.length === 5) {
-    const bleepnum = "teleprompt://011734" + num
+    const bleepnum = "telprompt://011734" + num
     window.location = (bleepnum)
   } else {
     bleep.value = ""
