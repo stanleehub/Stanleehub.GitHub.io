@@ -21,6 +21,13 @@
     "Tag": "cancall"
   },
   {
+    "Location": "ED Sister",
+    "Type": "ext",
+    "Number": "28207",
+    "Notes": "",
+    "Tag": "cancall"
+  },
+  {
     "Location": "Starlight",
     "Type": "ext",
     "Number": "28334",
@@ -49,10 +56,17 @@
     "Tag": "cancall"
   },
   {
-    "Location": "Theatre Coordinator",
-    "Type": "Bleep",
-    "Number": "2025",
-    "Notes": "",
+    "Location": "Clinic OPD 1",
+    "Type": "Ext",
+    "Number": "27978",
+    "Notes": "Nursing station",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "Clinic OPD 2",
+    "Type": "Ext",
+    "Number": "27978",
+    "Notes": "Nursing station",
     "Tag": "cancall"
   }
 ]

@@ -1,10 +1,58 @@
 [
   {
-    "Location": "Penguin 1",
+    "Location": "COVID Result",
     "Type": "Ext",
-    "Number": "28331",
+    "Number": "27076",
+    "Notes": "",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "Genetics",
+    "Type": "Ext",
+    "Number": "46168",
+    "Notes": "Request Form: <a href='https://www.nbt.nhs.uk/sites/default/files/document/BGL%20request%20form.pdf'>Download here</a>",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "Lab Reception",
+    "Type": "Ext",
+    "Number": "23080",
+    "Notes": "",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "Lab Reception",
+    "Type": "Ext",
+    "Number": "22766",
+    "Notes": "Send away",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "Blood Bank",
+    "Type": "Ext",
+    "Number": "22579",
+    "Notes": "",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "Biochem Lab",
+    "Type": "Ext",
+    "Number": "22469",
+    "Notes": "",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "Microbiology Lab",
+    "Type": "Ext",
+    "Number": "46222",
+    "Notes": "also southmead",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "Histopathology",
+    "Type": "Ext",
+    "Number": "27556",
     "Notes": "",
     "Tag": "cancall"
   }
-  
 ]

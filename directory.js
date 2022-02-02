@@ -41,7 +41,7 @@ function loadDirectory(data, elid) {
 
 
   var div = document.getElementById(elid)
-let searchbox = document.getElementById('page-search-results')
+  let searchbox = document.getElementById('page-search-results')
 
   for (i = 0; i < data.length; i++) {
 
@@ -52,13 +52,13 @@ let searchbox = document.getElementById('page-search-results')
 
     dir.className = "directory col-12 col-md-3 col-xl-3 blurme"
     dir.innerHTML = '<div class="directoryCard">' +
-      '<div class="title text-wrap searchme"><span><i class="lar la-address-book text-primary"></i></span>' +
-      data[i].Location + '<br><small class="text-muted">' + data[i].Notes + '</small></div>' +
-      '<div class="details font-weight-bold">' + data[i].Number + '</div>' +
+      '<div class="title text-wrap w-200 searchme"><span><i class="lar la-address-book text-primary"></i></span>' +
+      data[i].Location + '<br><small class="text-muted text-capitalize">' + data[i].Notes + '</small></div>' +
+      '<div class="details font-weight-bold pr-10">' + data[i].Number + '</div>' +
       '</div>'
     div.appendChild(dir)
 
-  
+
     var action = data[i].Tag
 
     if (action === 'cancall') {
@@ -81,11 +81,11 @@ let searchbox = document.getElementById('page-search-results')
       // console.log(action);
     }
 
-      // duplicate this item and add to search box
-      let searchitem = dir.cloneNode(true)
-      // add to search box as well
-      searchbox.appendChild(searchitem)
-  
+    // duplicate this item and add to search box
+    let searchitem = dir.cloneNode(true)
+    // add to search box as well
+    searchbox.appendChild(searchitem)
+
 
   }
 
