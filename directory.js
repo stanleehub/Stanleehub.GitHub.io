@@ -41,7 +41,7 @@ function loadDirectory(data, elid) {
 
 
   var div = document.getElementById(elid)
-
+let searchbox = document.getElementById('page-search-results')
 
   for (i = 0; i < data.length; i++) {
 
@@ -54,10 +54,11 @@ function loadDirectory(data, elid) {
     dir.innerHTML = '<div class="directoryCard">' +
       '<div class="title text-wrap searchme"><span><i class="lar la-address-book text-primary"></i></span>' +
       data[i].Location + '<br><small class="text-muted">' + data[i].Notes + '</small></div>' +
-      '<div class="details">' + data[i].Number + '</div>' +
+      '<div class="details font-weight-bold">' + data[i].Number + '</div>' +
       '</div>'
     div.appendChild(dir)
 
+  
     var action = data[i].Tag
 
     if (action === 'cancall') {
@@ -67,8 +68,9 @@ function loadDirectory(data, elid) {
       linka.innerHTML = ""
       linka.href = 'telprompt://011734' + data[i].Number
       linka.id = data[i].Number
-      // document.getElementById("dir").appendChild(node)
+
       dir.lastChild.appendChild(linka);
+
     } else if (action === '') {
       var linkb = document.createElement('i')
       linkb.className = "las la-tty"
@@ -78,6 +80,12 @@ function loadDirectory(data, elid) {
       dir.lastChild.appendChild(linkb)
       // console.log(action);
     }
+
+      // duplicate this item and add to search box
+      let searchitem = dir.cloneNode(true)
+      // add to search box as well
+      searchbox.appendChild(searchitem)
+  
 
   }
 
