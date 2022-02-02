@@ -44,7 +44,7 @@ function displayBleeps(data) {
       var myitem = document.createElement('h3')
       myitem.innerHTML = data[i].Location
       topList.appendChild(myitem)
-      console.log(i);
+      // console.log(i);
       break
     }
     topList.innerHTML = ""

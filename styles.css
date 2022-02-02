@@ -5,10 +5,12 @@ html{
   box-sizing: border-box;
 }
 
+/* prevents zoomining in on iphone  */
 body{
   font-size: 16px;
 }
 
+/* prevents zoomining in on iphone  */
 input, select{
   font-size: 16px!important;
 }
@@ -65,7 +67,7 @@ section{
 
 
 
-h2,.bleepresult {
+h2,.bleepresult, #fluidresult {
   /* From https://css.glass */
 background: rgba(255, 255, 255, 0.2);
 border-radius: 16px;

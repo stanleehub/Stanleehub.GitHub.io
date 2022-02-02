@@ -5,6 +5,8 @@ function fluidselected() {
 
   let maintenance = document.getElementById('maintenance')
   maintenance.disabled = "disabled"
+
+  clearresults
   // 
   switch (fluidtype) {
     case "custom":
@@ -27,6 +29,8 @@ function fluidselected() {
       // maintenance.disabled = "disabled"
       break
   }
+
+  calculatefluid()
 }
 
 function calculatefluid() {
@@ -43,9 +47,10 @@ function calculatefluid() {
     if (fluidtype === "bolus") {
       result = weight * 20
       showresult(result, fluidtype)
-    } else
-
-      console.log(weight, maintenancetype, maintenance);
+    }
+    result = weight * (maintenance / 100)
+    showresult(result, fluidtype)
+    console.log(weight, maintenancetype, maintenance);
   } else {
     console.log('not a number');
   }
@@ -54,7 +59,7 @@ function calculatefluid() {
 function showresult(result, ftype) {
 
 
-  let show = result.toString() + "mls"
+  let show = result.toString() + " mls"
   let desc = ""
 
   clearresults()
@@ -69,6 +74,7 @@ function showresult(result, ftype) {
   }
 
   let answer = document.createElement('h4')
+  answer.className = "text-primary"
   answer.innerHTML = show + "<br>" + "<h5>" + desc + "</h5>"
 
   resultel.appendChild(answer)
