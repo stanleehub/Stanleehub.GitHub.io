@@ -93,10 +93,10 @@
         <!-- FLUID Calc -->
         <section id="section1">
 
-          <h2 class="text-center text-primary mb-20">Fluid Calc</h2>
+          <h2 class="text-center text-primary mb-10">Fluid Calc</h2>
           <div class="w-400 mw-full">
 
-            <details class="collapse-panel w-400 mw-full mb-20" closed>
+            <details class="collapse-panel w-400 mw-full mb-10" closed>
               <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
               <summary class="collapse-header">
                 <span class="hidden-collapse-open">Howto</span>
@@ -113,7 +113,7 @@
               </div>
             </details>
 
-            <div class="form-inline mb-30">
+            <div class="form-inline mb-10">
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text" aria-required="true">Weight</span>
@@ -126,7 +126,7 @@
 
               </div>
 
-              <div class="form-group mt-20">
+              <div class="form-group mt-10">
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text" for="select-fluid" aria-required="true">Requirement</span>
@@ -148,7 +148,7 @@
 
               </div>
 
-              <div class="form-inline mb-20">
+              <div class="form-inline mb-10">
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text" aria-required="true">Maintenance</span>
@@ -166,9 +166,13 @@
                 <button onclick="calculatefluid()" class="btn btn-danger">Calculate</button>
               </div>
 
-              <h3 class="text-center">Results...</h3><br>
-              <div class="text-center text-success w-full h-250 mark" id="fluidresult"></div>
+              <div class="card w-full">
+                <h3 class="card-title text-center m-0">Results...</h3><br>
+                <div class="text-center text-success h-250" id="fluidresult"></div>
+  
 
+              </div>
+              
 
             </div>
         </section>
@@ -365,7 +369,7 @@
         </div> -->
 
         <!-- SEARCH BOX -->
-        <div class="input-group searchbox ml-auto">
+        <div class="input-group searchbox ml-20">
           <input id="searchbar" type="text" onfocus="searchbar_focused()" onkeyup="search_dir()" class="form-control"
             placeholder="Search location">
         </div>
