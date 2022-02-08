@@ -1,10 +1,10 @@
 function fluidselected() {
-  console.log(document.getElementById('select-fluid').value);
-  //  = option.value;
+  // This functions: updates when a fluid type is selected from the dropdwon
+
   let fluidtype = document.getElementById('select-fluid').value
 
   let maintenance = document.getElementById('maintenance')
-  maintenance.disabled = "disabled"
+  maintenance.disabled = "disabled" //disable custom maintenance box 
 
   clearresults
   // 
@@ -38,55 +38,68 @@ function calculatefluid() {
   let weight = Number(document.getElementById('weight').value)
   let maintenancetype = document.getElementById('select-fluid').value
   let maintenance = Number(document.getElementById('maintenance').value)
-
-  let result = 0
-
   let fluidtype = document.getElementById('select-fluid').value
 
-  if (weight > 0) {
-    if (fluidtype === "bolus") {
-      result = weight * 20
-      showresult(result, fluidtype)
-    }
-    result = weight * (maintenance / 100)
-    showresult(result, fluidtype)
-    console.log(weight, maintenancetype, maintenance);
-  } else {
-    console.log('not a number');
+  let totvol = 0
+  let rate = ""
+  let desc = ""
+  let temp = 0
+  const max_vol = 2000
+
+  if (weight < 0) {
+    return console.log("Weight limit not valid")
   }
+
+  switch (fluidtype) {
+    case "bolus":
+      totvol = weight * 20
+      rate = "Push over 30mins or 1 hour"
+      desc = "0.9% NaCl"
+      result = totvol
+      break
+    case "py":
+      totvol = weight * 150
+      result = totvol
+      temp = result / 24
+      rate = temp.toString() + " mls per hour"
+      desc = '0.9% NaCl + 10mmol KCL <br><small>Also add replacements ml for ml</small>'
+      break
+    default:
+      if (weight > 40) {
+        totvol = max_vol
+      } else if (weight <= 10) {
+        totvol = weight * 100
+      } else if (weight <= 20) {
+        totvol = 1000 + ((weight - 10) * 50)
+      } else {
+        totvol = 1500 + ((weight - 20) * 20)
+      }
+      result = totvol * (maintenance / 100)
+      temp = Math.round(result / 24)
+      rate = temp.toString() + " mls per hour"
+      desc = 'Plasmalyte in 5% Dextrose <br> <a class="align-right" href="">See other fluids</a>'
+  }
+  result = Math.round(result)
+  showresult(result, rate, desc)
+
 }
 
-function showresult(result, ftype) {
 
 
-  let show = result.toString() + " mls"
-  let desc = ""
+function showresult(result, rate, desc) {
+  let result_text = result.toString() + " mls"
 
   clearresults()
 
-  let resultel = document.getElementById('fluidresult')
-
-  switch (ftype) {
-    case "bolus":
-      desc = "Give bolus over 30mins or 1hour"
-      console.log(show, desc);
-      break
-  }
+  let result_element = document.getElementById('fluidresult')
 
   let answer = document.createElement('div')
-  // answer.className = "text-primary text-center"
-  answer.innerHTML = '<strong>Rate to give: <span class="text-success">' + show + '</span></strong>' +
-  '<br>'+
-    + desc
 
-  //   <div>
-  //   <strong>Title</strong>
-  //   <br>
-  //   Amazing
-  //   <br>
-  //   dsds
-  // </div>
-  resultel.appendChild(answer)
+  answer.innerHTML = '<strong>Volume: <span class="text-success">' + result_text + '</span></strong>' + '<br>' +
+    '<strong>Rate: <span class="text-success">' + rate + '</span></strong>' + '<br>' +
+    '<strong>Fluid type: <span class="text-success">' + desc + '</span></strong>'
+
+  result_element.appendChild(answer)
 }
 
 function clearresults() {

@@ -22,7 +22,7 @@
 
   <div class="page-wrapper with-navbar-fixed-bottom">
 
-    <!-- AABOUT MODAL -->
+    <!-- ABOUT MODAL -->
     <div class="modal" id="aboutmodal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -128,7 +128,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text" aria-required="true">Weight</span>
                   </div>
-                  <input type="number" class="form-control" value="" id="weight" placeholder="0.00"
+                  <input type="number" class="form-control" value="" id="weight" placeholder="0.00 max 40kg"
                     onkeyup="calculatefluid()">
                   <div class="input-group-append">
                     <span class="input-group-text">kg</span>
@@ -163,7 +163,7 @@
                     <span class="input-group-text" aria-required="true">Maintenance</span>
                   </div>
                   <input type="number" disabled="disabled" class="form-control" value="100" placeholder="0.00"
-                    id="maintenance" onchange="calculatefluid()">
+                    id="maintenance" onchange="calculatefluid()" onkeyup="calculatefluid()">
                   <div class="input-group-append">
                     <span class="input-group-text">%</span>
                   </div>
@@ -179,14 +179,14 @@
             </div>
 
             <!-- results area -->
-            <div class="resultcard  mt-auto">
+            <div class="resultcard  mt-auto mb-auto">
               <div class="content" id="fluidresult">
                 <div>
-                  <strong>Title</strong>
+                  <strong></strong>
                   <br>
-                  Amazing
+
                   <br>
-                  dsds
+
                 </div>
               </div>
 
@@ -447,6 +447,34 @@
         }
       }
     }
+
+    /* Storing user's device details in a variable*/
+    let details = navigator.userAgent;
+
+    /* Creating a regular expression 
+    containing some mobile devices keywords 
+    to search it in details string*/
+    let regexp = /android|iphone|kindle|ipad/i;
+
+    /* Using test() method to search regexp in details
+    it returns boolean value*/
+    let isMobileDevice = regexp.test(details);
+
+    if (isMobileDevice) {
+      console.log("You are using a Mobile Device");
+    } else {
+      console.log("You are using Desktop");
+    }
+
+    // let test = {
+    //   "name":"test"
+    // }
+
+    // fs.writeFile ("directory.json", JSON.stringify(test), function(err) {
+    // if (err) throw err;
+    // console.log('complete');
+    // }
+
 
   </script>
 
