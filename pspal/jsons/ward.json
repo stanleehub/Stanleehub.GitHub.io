@@ -1,0 +1,72 @@
+[
+  {
+    "Location": "Penguin 1",
+    "Type": "Ext",
+    "Number": "28331",
+    "Notes": "",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "Penguin 2",
+    "Type": "Ext",
+    "Number": "28309",
+    "Notes": "",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "ED Main",
+    "Type": "ext",
+    "Number": "28666",
+    "Notes": "",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "ED Sister",
+    "Type": "ext",
+    "Number": "28207",
+    "Notes": "",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "Starlight",
+    "Type": "ext",
+    "Number": "28334",
+    "Notes": "oncology",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "Apollo",
+    "Type": "ext",
+    "Number": "28335",
+    "Notes": "",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "ED Obs",
+    "Type": "Ext",
+    "Number": "28365",
+    "Notes": "",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "ED Obs 2",
+    "Type": "Ext",
+    "Number": "28339",
+    "Notes": "",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "Clinic OPD 1",
+    "Type": "Ext",
+    "Number": "27978",
+    "Notes": "Nursing station",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "Clinic OPD 2",
+    "Type": "Ext",
+    "Number": "27978",
+    "Notes": "Nursing station",
+    "Tag": "cancall"
+  }
+]

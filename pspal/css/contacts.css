@@ -1,0 +1,48 @@
+
+.directoryCard{
+  display: flex;
+  justify-content: space-between;
+
+  /* border: 0.5px solid black; */
+  border-radius: 15px;
+  box-shadow: 1px 1px 8px black;
+  padding-left:15px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  padding-right: 20px;
+  margin: 10px;
+  
+  
+}
+
+
+.directoryCard .title{
+  /* display:inline; */
+  /* margin: auto; */
+  font-weight: 700;
+  
+}
+
+.directoryCard .detail{
+  display:inline;
+  margin: auto;
+  
+}
+
+.directoryCard .callbutton{
+  font-size: 2em;
+  
+}
+
+.directoryCard i{
+  font-size: 24px;
+  /* padding-top: ; */
+}
+
+.searchbox{
+  margin-left: 30%;
+  margin-bottom: 20px;
+  width:200px;
+  padding-right: 15px;
+  border-radius: 10px;
+} 

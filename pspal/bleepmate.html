@@ -39,7 +39,7 @@
       <div class="navbar-content">
         <div class="header container">
 
-          <h1 class="text-center font-weight-medium font-size-24 text-primary">Bleep Mate</h1>
+          <h1 class="text-center font-weight-medium font-size-24 text-primary">Bleep Mate <span><small class="text-muted font-size-16 text-monospace align-bottom">beta</small></span></h1>
         </div>
       </div>
       <div class="navbar-content ml-auto mr-20">
@@ -47,18 +47,35 @@
       </div>
     </nav>
 
-    <div class="content-wrapper">
+    <div class="content-wrapper pt-20">
       <div class="container-fluid">
 
+        <h2 class="text-center text-primary mb-20">Who Bleeped ?</h2>
+        <div class="row d-block p-10 bleepresult">
 
-        
+          <!-- <h3 class="text-center">Location...</h3> -->
+          <div class="text-center text-danger  h-150" id="bleeplist"></div>
+        </div>
+        <div class="row d-block mt-20">
+          <div class="col">
+            <div class="card form-group text-center">
+              <input id="bleepinput" type="number" name="bleep" maxlength="5"
+                class="form-control form-control-lg mw-full mb-10" placeholder="Enter the 5-digit bleep"
+                onkeyup="findbleep()">
+              <button class="btn btn-lg btn-danger text-white" type="button" onclick="callbleep()"><i
+                  class="las la-phone"></i> Call</button>
+            </div>
+          </div>
+
+        </div>
+
+
       </div>
     </div>
 
   </div>
 
-
-
+  <script src="js/whatbleep.js"></script>
   <!-- VENDOR JS  -->
   <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
 </body>

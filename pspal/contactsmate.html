@@ -14,6 +14,8 @@
 
   <!-- MY CSS -->
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/contacts.css" />
+
 
   <title>PsPal 1.1</title>
 </head>
@@ -47,17 +49,188 @@
       </div>
     </nav>
 
-    <div class="content-wrapper">
-      <div class="container-fluid">
+    <div class="content-wrapper p-20">
+      <div class="container-fluid pt-20">
 
 
-        
+
+        <!-- SEARCH BOX -->
+        <!-- <div class="input-group searchbox">
+          <input id="searchbar" type="text" onkeyup="search_dir()" class="form-control" placeholder="Search location">
+        </div> -->
+
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" aria-required="true">Search</span>
+            </div>
+            <input id="searchbar" type="text" onkeyup="search_dir()" class="form-control" placeholder="Search location">
+
+            <div class="input-group-append">
+              <span class="input-group-text">x</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="collapse-group">
+
+          <!-- SEARCH RESULTS TAB -->
+          <details id="page-search" class="collapse-panel mw-full invisible position-absolute" open>
+            <summary class="collapse-header">
+              <strong>Search Results</strong>
+              <br />
+              <span class="text-muted">Paeds Surgery, Reg bleeps, Secretares</span>
+            </summary>
+            <div class="collapse-content p-0">
+              <div id="page-search-results" class="row">
+
+              </div>
+            </div>
+          </details>
+
+
+          <!-- MYTEAM TAB -->
+          <details class="collapse-panel mw-full hide-when-search" closed>
+            <summary class="collapse-header">
+              <strong>My Team</strong>
+              <br />
+              <span class="text-muted">Paeds Surgery, Reg bleeps, Secretares</span>
+            </summary>
+            <div class="collapse-content p-0">
+              <div id="myteam" class="row"></div>
+            </div>
+          </details>
+
+
+          <!-- WARDS TAB -->
+          <details class="collapse-panel mw-full hide-when-search" closed>
+            <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100%, mt-20 = margin-top: 2rem (20px) -->
+            <summary class="collapse-header">
+              <strong>Wards</strong>
+              <br>
+              <span class="text-muted">BCH and NICU wards</span>
+
+            </summary>
+            <div class="collapse-content p-0">
+              <div id="ward" class="row"></div>
+            </div>
+          </details>
+
+          <!-- IMAGING TAB -->
+          <details class="collapse-panel mw-full hide-when-search" closed>
+            <summary class="collapse-header">
+              <strong>Imaging</strong>
+              <br>
+              <span class="text-muted">Radiology, ECG & ECHO</span>
+            </summary>
+            <div class="collapse-content p-0">
+              <div id="imaging" class="row"></div>
+            </div>
+          </details>
+
+          <!-- LABS TAB -->
+          <details class="collapse-panel mw-full hide-when-search" closed>
+            <summary class="collapse-header">
+              <strong>Labs</strong>
+              <br>
+              <span class="text-muted">Chem, Micro B, Histopath, Genetics</span>
+            </summary>
+            <div class="collapse-content p-0">
+              <div id="lab" class="row"></div>
+            </div>
+          </details>
+
+          <!-- OTHER TEAMS TAB -->
+          <details class="collapse-panel mw-full hide-when-search" closed>
+            <summary class="collapse-header">
+              <strong>Other Teams</strong>
+              <br>
+              <span class="text-muted">Other Teams</span>
+            </summary>
+            <div class="collapse-content p-0">
+              <div id="referral" class="row"></div>
+            </div>
+          </details>
+
+          <!-- THEATRE TAB -->
+          <details class="collapse-panel mw-full hide-when-search" closed>
+            <summary class="collapse-header">
+              <strong>Theatres</strong>
+              <br>
+              <span class="text-muted">Theatre Related</span>
+            </summary>
+            <div class="collapse-content p-0">
+              <div id="theatre" class="row"></div>
+            </div>
+          </details>
+
+          <!-- EXTERNAL HOSPITALS -->
+          <details class="collapse-panel mw-full hide-when-search" closed>
+            <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100%, mt-20 = margin-top: 2rem (20px) -->
+            <summary class="collapse-header">
+              <strong>
+                External Hospitals
+              </strong>
+              <br>
+              <span class="text-muted">Referral hospitals</span>
+            </summary>
+            <div class="collapse-content p-0">
+              <div id="external" class="row">
+              </div> <!--  row-eq-spacing -->
+            </div>
+          </details>
+
+        </div>
+
       </div>
     </div>
 
   </div>
 
+  <script src="js/directory.js"></script>
+  <script>
+    loadDirs()
 
+    function search_dir() {
+
+      let input = document.getElementById('searchbar').value
+      input = input.toLowerCase();
+      let x = document.getElementsByClassName('directory');
+
+      let res = document.getElementById('page-search');
+      let hideme = document.getElementsByClassName('hide-when-search');
+
+
+      for (i = 0; i < x.length; i++) {
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+          x[i].style.display = "none";
+
+          res.classList.remove('invisible');
+          for (let elm of hideme) {
+            elm.classList.add('invisible')
+
+          }
+
+        }
+        else {
+          // console.log('else')
+          x[i].style.display = "list-item";
+        }
+
+        if (input === "") {
+
+          res.classList.add('invisible');
+
+          for (let elm of hideme) {
+            elm.classList.remove('invisible')
+            // loadDirs()
+
+          }
+        }
+      }
+    }
+
+  </script>
 
   <!-- VENDOR JS  -->
   <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>

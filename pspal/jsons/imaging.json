@@ -1,0 +1,86 @@
+[
+  {
+    "Location": "Ultrasound USS",
+    "Type": "Ext",
+    "Number": "22625",
+    "Notes": "",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "Radiographers",
+    "Type": "Ext",
+    "Number": "28465",
+    "Notes": "",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "PACS",
+    "Type": "Ext",
+    "Number": "20966",
+    "Notes": "",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "Radiographers",
+    "Type": "ext",
+    "Number": "2726",
+    "Notes": "Bleep, out of hours",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "Radiology Reception",
+    "Type": "ext",
+    "Number": "28186",
+    "Notes": "",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "Reporting room",
+    "Type": "ext",
+    "Number": "28472",
+    "Notes": "",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "Radiology Reg",
+    "Type": "Ext",
+    "Number": "23141",
+    "Notes": "Out of hours",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "MRI",
+    "Type": "Ext",
+    "Number": "27937",
+    "Notes": "",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "MRI Level 3",
+    "Type": "Ext",
+    "Number": "27824",
+    "Notes": "",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "ECG",
+    "Type": "Ext",
+    "Number": "28368",
+    "Notes": "",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "Echo",
+    "Type": "Ext",
+    "Number": "28722",
+    "Notes": "",
+    "Tag": "cancall"
+  },
+  {
+    "Location": "CT",
+    "Type": "Ext",
+    "Number": "27938",
+    "Notes": "",
+    "Tag": "cancall"
+  }
+]
