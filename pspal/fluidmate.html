@@ -47,18 +47,68 @@
       </div>
     </nav>
 
-    <div class="content-wrapper">
+    <div id="top" class="content-wrapper">
       <div class="container-fluid p-20">
 
         <!-- FLUID MATE -->
 
-        <div class="">
+        <div  class="section pt-10">
+
+          <!-- ENTER AGE  -->
+          <div class="form-group">
+
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">DOB</span>
+              </div>
+              <input type="date" class="form-control" placeholder="Years">
+              <!-- flex-reset = flex: 0 1 auto, w-50 = width: 5rem (50px) -->
+              <div class="input-group-append">
+                <span class="input-group-text">GA</span>
+              </div>
+
+              <select class="form-control flex-reset w-100">
+                <!-- flex-reset = flex: 0 1 auto, w-50 = width: 10rem (100px) -->
+                <option value="" selected="selected" disabled="disabled">Full term</option>
+                <option value="class-1">Term</option>
+                <option value="class-2">Preterm</option>
+                <option value="class-3">Class 3</option>
+                <option value="class-4">Class 4</option>
+                <option value="class-5">Class 5</option>
+              </select>
+
+            </div>
+          </div>
+
+          <!-- WEIGHT INPUT   -->
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" aria-required="true">Weight</span>
+              </div>
+              <input type="number" class="form-control" value="" id="weight" placeholder="0.00 max 40kg"
+                onkeyup="calculatefluid()">
+              <div class="input-group-append">
+                <span class="input-group-text">kg</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="container d-flex justify-content-between">
+            <a class="text-center btn btn-sm btn-primary btn-pill">Fluid Calculations</a>
+            <a class="text-center btn btn-sm btn-secondary btn-pill">Common Calculations</a>
+            
+
+          </div>
+          <hr>
+
+
 
           <!-- header with notes -->
           <details class="collapse-panel mw-full mb-10" closed>
             <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
             <summary class="collapse-header">
-              <span class="hidden-collapse-open">Howto</span>
+              <span class="hidden-collapse-open">Fluid Calculation Notes</span>
               <span class="hidden-collapse-closed">Ok Lets talk fluids</span>
               <br />
               <span class="text-muted">Fluid requirements, replacements and correctons</span>
@@ -74,19 +124,7 @@
 
           <div class="form-inline mw-full">
 
-            <!-- WEIGHT INPUT   -->
-            <div class="form-group">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" aria-required="true">Weight</span>
-                </div>
-                <input type="number" class="form-control" value="" id="weight" placeholder="0.00 max 40kg"
-                  onkeyup="calculatefluid()">
-                <div class="input-group-append">
-                  <span class="input-group-text">kg</span>
-                </div>
-              </div>
-            </div>
+
 
             <!-- requirement INPUT -->
             <div class="form-group">
@@ -134,6 +172,25 @@
               </div>
             </div>
           </div>
+
+          <a href="#top" class="btn btn-sm btn-secondary btn-pill">Top</a>
+         
+          <details class="collapse-panel mw-full mb-10" closed>
+            <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+            <summary class="collapse-header">
+              <span class="hidden-collapse-open">Fluid Calculation Notes</span>
+              <span class="hidden-collapse-closed">Ok Lets talk fluids</span>
+              <br />
+              <span class="text-muted">Fluid requirements, replacements and correctons</span>
+            </summary>
+            <div class="collapse-content">
+              <ul>
+                <li>Enter weight and select fluid category</li>
+
+              </ul> uIt was going to rain, so he better get outside and prepare. Sleeping in his car was never the
+              plan but sometimes things don't work out as planned.
+            </div>
+          </details>
 
 
         </div>
