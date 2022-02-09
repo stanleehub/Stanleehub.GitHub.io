@@ -45,8 +45,10 @@ function calculatefluid() {
   let desc = ""
   let temp = 0
   const max_vol = 2000
-
-  if (weight < 0) {
+ 
+  // console.log(weight);
+  if (weight < 1) {
+    clearresults()
     return console.log("Weight limit not valid")
   }
 
@@ -97,7 +99,8 @@ function showresult(result, rate, desc) {
 
   answer.innerHTML = '<strong>Volume: <span class="text-success">' + result_text + '</span></strong>' + '<br>' +
     '<strong>Rate: <span class="text-success">' + rate + '</span></strong>' + '<br>' +
-    '<strong>Fluid type: <span class="text-success">' + desc + '</span></strong>'
+    '<strong>Fluid type: <span class="text-success">' + desc + '</span></strong>' + '<hr>' +'<br>'+ 
+    '<button onclick="showmeds()" class="container btn btn-small btn-danger m-0">Calculate Common Meds....</button>'
 
   result_element.appendChild(answer)
 }
@@ -105,4 +108,9 @@ function showresult(result, rate, desc) {
 function clearresults() {
   let resultel = document.getElementById('fluidresult')
   resultel.innerHTML = ""
+}
+
+function showmeds(){
+  console.log('test');
+  window.location.href = '#medmodal'; //show med modal form
 }

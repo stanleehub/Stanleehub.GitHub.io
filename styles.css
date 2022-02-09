@@ -133,7 +133,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 
 .directoryCard i{
   font-size: 24px;
-  padding-top: ;
+  /* padding-top: ; */
 }
 
 /* input[type=text] {
@@ -147,3 +147,12 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 /* input[type=text]:focus {
   width: 70%;
 } */
+
+.medmodal{
+  padding-top: 10px;
+  padding: 10px 10px 10px 10px;
+}
+
+.medlist{
+  padding: 5px 10px 5px 10px;
+}
