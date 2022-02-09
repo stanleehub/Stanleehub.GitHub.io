@@ -7,7 +7,7 @@ html{
 
 /* prevents zoomining in on iphone  */
 body{
-  font-size: 16;
+  font-size: 16px;
   letter-spacing: 1px;
   box-sizing: border-box;
 }
@@ -33,6 +33,7 @@ h1, h4{
   color: rebeccapurple;
 
 }
+
 
 .content a{
   text-decoration: none;
