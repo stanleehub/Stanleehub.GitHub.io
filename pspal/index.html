@@ -35,6 +35,54 @@
   </div>
 
   <div class="page-wrapper with-navbar ">
+
+    <!-- ABOUT MODAL -->
+    <div class="modal" id="aboutmodal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <a href="#" class="close" role="button" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </a>
+          <h5 class="modal-title text-center">PaediSurgery Pal v1.1</h5>
+          <p>This tool was created for paeds surg juniors and veterans as a quick reference for all things paediatric
+            surgery.</p>
+          <p class="text-center ">Works best with <span class="text-danger font-weight-bold">iPhones</span></p>
+          <hr>
+          <h6 class="text-center font-weight-bold">Development Progress</h6>
+          <div class="progress h-25">
+            <div class="progress-bar progress-bar-animated rounded-0" style="width: 80%" role="progressbar"
+              aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">Overall 80%</div>
+          </div>
+          <br>
+          <div class="progress h-25">
+            <div class="progress-bar bg-success progress-bar-animated rounded-0" style="width: 60%" role="progressbar"
+              aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Modules 60%</div>
+          </div>
+
+          <hr>
+          <small>DISCLAIMER: This App may not be relied upon for the purposes of medical diagnosis or as a
+            recommendation for medical care or treatment.
+          </small>
+          <div class="container-fluid d-inline-flex justify-content-between mt-20">
+            <div class="d-inline">
+              <a href="mailto:ps.astanley@gmail.com" class="btn btn-sm btn-primary" role="button"><i
+                  class="las la-envelope"></i>Contact</a>
+              <br>
+              <span class="font-size-12"><small>? Issues/Ideas</small></span>
+            </div>
+            <div class="d-inline">
+              <a href="https://www.paypal.me/appstanley" target="_blank" rel="noopener noreferrer"
+                class="btn btn-sm btn-secondary" role="button"><i class="las la-coffee"></i>Support</a>
+              <br>
+              <span class="font-size-12"><small>? Buy me a coffee</small> </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
     <nav class="navbar blurme">
       <div class="navbar-content mt-10">
         <div class="header container ">
@@ -44,7 +92,7 @@
         </div>
       </div>
       <div class="navbar-content ml-auto mr-20">
-        <button class="btn btn-sm" type="button">About v1.1</button>
+        <a href="#aboutmodal" class="btn btn-sm" type="button">About</a>
       </div>
     </nav>
 
