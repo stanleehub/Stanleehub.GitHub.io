@@ -105,9 +105,12 @@ function showresult(result, rate, desc) {
 function clearresults() {
   let fr = document.getElementById('fluid-result')
   let wr = document.getElementById('weight-result')
+  let dr = document.getElementById('drug-result')
+
 
   fr.innerHTML = '<span class="font-size-12 text-muted">Fluid result shown below (expand for notes).</span>'
   wr.innerHTML = '<span class="font-size-12 text-muted">Weight result shown below (expand for notes).</span>'
+  dr.innerHTML = '<span class="font-size-12 text-muted">Drug results shown below (expand for notes).</span>'
 
 }
 

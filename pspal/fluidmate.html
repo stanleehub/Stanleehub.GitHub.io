@@ -91,7 +91,7 @@
             </div>
           </div>
 
-          <div class="container-fluid d-flex justify-content-center border rounded mb-10 calc-div">
+          <div class="container-fluid d-flex justify-content-center border rounded mb-10 bg-success">
             <span class="text-center"><small>Fluid & Feed Calculations</small></span>
 
           </div>
@@ -142,7 +142,7 @@
 
           <!-- FLUID RESULTS BOX  -->
           <details class="collapse-panel mw-full mb-10" closed>
-            <summary class="collapse-header" id="fluid-result">
+            <summary class="collapse-header bg-transparent border-0 blurme" id="fluid-result">
               <span class="hidden-collapse-open"></span>
               <!-- RESULT FROM JS GOES HERE -->
             </summary>
@@ -171,13 +171,46 @@
 
           <hr>
 
-          <div class="container-fluid d-flex justify-content-center border rounded mb-10 calc-div">
-            <span class="text-center"><small>Weight (kg) Estimation</small></span>
+          <div class="container-fluid d-flex justify-content-center border rounded mb-10 bg-primary">
+            <span class="text-center"><small>Common Drug Doses</small></span>
+          </div>
+
+            <!-- DRUG RESULTS BOX  -->
+            <details class="collapse-panel mw-full mb-10 closed">
+              <summary class="collapse-header bg-transparent border-0 blurme" id="drug-result">
+                <span class="hidden-collapse-open"></span>
+                <!-- RESULT FROM JS GOES HERE -->
+              </summary>
+              <div class="collapse-content p-0">
+                <ul class="weight-notes p-1 ">
+                  <li>Weight estimation based on age</li>
+                  <ul>
+                    <li class="">Age is:</li>
+                    <ul>
+                      <li>
+                        < 12 months:<code class="code">(kg) = (age in months + 9)/2</code>
+                      </li>
+                      <li>1-5 years:<code class="code">(kg) = 2 x (age in years + 5)</code></li>
+                      <li>5-14 years:<code class="code">(kg) = 4 x age in years</code></li>
+                    </ul>
+                  </ul>
+                  <p class="text-right text-white pb-0 mb-0">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/18021105/" target="_blank" rel="noopener noreferrer">
+                      Ref: PubMed[2007]</a>
+                  </p>
+                </ul>
+              </div>
+            </details>
+  
+          <hr>
+
+          <div class="container-fluid d-flex justify-content-center border rounded mb-10 bg-danger">
+            <span class="text-center"><small>Age Based Estimations</small></span>
           </div>
 
           <!-- WEIGHT EST RESULTS BOX  -->
-          <details class="collapse-panel mw-full mb-10" closed>
-            <summary class="collapse-header" id="weight-result">
+          <details class="collapse-panel mw-full mb-10 closed">
+            <summary class="collapse-header bg-transparent border-0 blurme" id="weight-result">
               <span class="hidden-collapse-open"></span>
               <!-- RESULT FROM JS GOES HERE -->
             </summary>
