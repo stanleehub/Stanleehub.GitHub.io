@@ -1,0 +1,12 @@
+.maintenancenotes {
+  background: #7fb9f3;
+  padding: 15px;
+  list-style-type: square;
+
+}
+
+li { margin: 0px; }
+
+a{
+  color: white;
+}
