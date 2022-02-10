@@ -1,12 +1,22 @@
-.maintenancenotes {
-  background: #7fb9f3;
+.maintenance-notes {
+  background: #5daaf8;
   padding: 15px;
   list-style-type: square;
-
 }
 
 li { margin: 0px; }
 
 a{
   color: white;
+}
+
+.calc-div{
+  background-color:lightgrey;
+  font-weight: 600;
+}
+
+.weight-notes {
+  background: #7af184;
+  padding: 15px;
+  list-style-type: square;
 }

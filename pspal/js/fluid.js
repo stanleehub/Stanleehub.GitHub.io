@@ -93,19 +93,70 @@ function showresult(result, rate, desc) {
 
   clearresults()
 
-  let result_element = document.getElementById('fluidresult')
-
+  let result_element = document.getElementById('fluid-result')
   let answer = document.createElement('div')
   answer.innerHTML = '<span>Total Volume/24hrs: ' + result_text + '</span>' + '<br>' +
     '<span class="">Rate: ' + rate + '</span>' + '<br>' +
     '<span class="">Fluid type: ' + desc + '</span>'
 
-    result_element.appendChild(answer)
+  result_element.appendChild(answer)
 }
 
 function clearresults() {
-  let resultel = document.getElementById('fluidresult')
-  // let resultel = document.getElementById('clearfluidresult')
-  resultel.innerHTML = '<span class="font-size-12 text-muted">Results shown below (expand for notes).</span>'
+  let fr = document.getElementById('fluid-result')
+  let wr = document.getElementById('weight-result')
+
+  fr.innerHTML = '<span class="font-size-12 text-muted">Fluid result shown below (expand for notes).</span>'
+  wr.innerHTML = '<span class="font-size-12 text-muted">Weight result shown below (expand for notes).</span>'
+
+}
+
+function getAge() {
+  // from: https://codedec.com/tutorials/how-to-calculate-age-by-date-of-birth-in-javascript/
+  var userinput = document.getElementById("dob").value;
+  var dob = new Date(userinput);
+
+  if (userinput == null || userinput == '') {
+    return false;
+  }
+
+
+  var mdate = userinput.toString();
+  var dobYear = parseInt(mdate.substring(0, 4), 10);
+  var dobMonth = parseInt(mdate.substring(5, 7), 10);
+  var dobDate = parseInt(mdate.substring(8, 10), 10);
+
+  var today = new Date();
+  var birthday = new Date(dobYear, dobMonth - 1, dobDate);
+
+  var diffInMillisecond = today.valueOf() - birthday.valueOf();
+  var year_age = Math.floor(diffInMillisecond / 31536000000);
+  var day_age = Math.floor((diffInMillisecond % 31536000000) / 86400000);
+
+  if ((today.getMonth() == birthday.getMonth()) && (today.getDate() == birthday.getDate())) {
+    alert("Happy Birthday!");
+  }
+
+  var month_age = Math.floor(day_age / 30);
+  day_ageday_age = day_age % 30;
+
+  var tMnt = (month_age + (year_age * 12));
+  var tDays = (tMnt * 30) + day_age;
+
+  // console.log(year_age + " years " + month_age + " months " + day_age + " days")
+
+  showAge(year_age,month_age,day_age)
+}  
+
+function showAge(years,months,days){
+  clearresults()
+
+  let result_element = document.getElementById('weight-result')
+  let answer = document.createElement('div')
+  answer.innerHTML = '<span>Age: ' + years + " years " + months + " months " + days + " days"+ '</span>' + '<br>' +
+    // '<span class="">Rate: ' + rate + '</span>' + '<br>' +
+    // '<span class="">Fluid type: ' + desc + '</span>'
+
+  result_element.appendChild(answer)
 
 }

@@ -63,7 +63,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text">DOB</span>
               </div>
-              <input type="date" class="form-control" id="dob">
+              <input type="date" class="form-control" id="dob" onfocusout="getAge()">
               <!-- flex-reset = flex: 0 1 auto, w-50 = width: 5rem (50px) -->
               <div class="input-group-append">
                 <span class="input-group-text">GA</span>
@@ -87,10 +87,8 @@
             </div>
           </div>
 
-          <div class="container d-flex justify-content-between">
-            <a class="text-center btn btn-sm btn-primary btn-pill">Fluid Calculations</a>
-            <a class="text-center btn btn-sm btn-secondary btn-pill">Common Calculations</a>
-
+          <div class="container-fluid d-flex justify-content-center border rounded mb-10 calc-div">
+            <span class="text-center"><small>Fluid & Feed Calculations</small></span>
 
           </div>
           <hr>
@@ -140,12 +138,12 @@
 
           <!-- FLUID RESULTS BOX  -->
           <details class="collapse-panel mw-full mb-10" closed>
-            <summary class="collapse-header" id="fluidresult">
+            <summary class="collapse-header" id="fluid-result">
               <span class="hidden-collapse-open"></span>
               <!-- RESULT FROM JS GOES HERE -->
             </summary>
             <div class="collapse-content p-0">
-              <ul class="maintenancenotes p-1 ">
+              <ul class="maintenance-notes p-1 ">
                 <li>Maintenance Fluid</li>
                 <ul>
                   <li>Holliday–Segar formula <code class="code">100/50/20 rule</code></li>
@@ -164,14 +162,42 @@
                     Ref: NICE guidelines</a>
                 </p>
               </ul>
-              uIt was going to rain, so he better get outside and prepare. Sleeping in his car was never the
-              plan but sometimes things don't work out as planned.
             </div>
           </details>
 
-          <button class="btn" data-toggle="tooltip" data-title="Show on all screens" type="button">
-            Default
-          </button>
+          <hr>
+
+          <div class="container-fluid d-flex justify-content-center border rounded mb-10 calc-div">
+            <span class="text-center"><small>Weight (kg) Estimation</small></span>
+          </div>
+
+          <!-- WEIGHT EST RESULTS BOX  -->
+          <details class="collapse-panel mw-full mb-10" closed>
+            <summary class="collapse-header" id="weight-result">
+              <span class="hidden-collapse-open"></span>
+              <!-- RESULT FROM JS GOES HERE -->
+            </summary>
+            <div class="collapse-content p-0">
+              <ul class="weight-notes p-1 ">
+                <li>Weight estimation based on age</li>
+                <ul>
+                  <li class="">Age is:</li>
+                  <ul>
+                    <li>< 12 months:<code class="code">(kg) = (age in months + 9)/2</code></li>
+                    <li>1-5 years:<code class="code">(kg) = 2 x (age in years + 5)</code></li>
+                    <li>5-14 years:<code class="code">(kg) = 4 x age in years</code></li>
+                  </ul>
+                </ul>
+                <p class="text-right text-white pb-0 mb-0">
+                  <a href="https://pubmed.ncbi.nlm.nih.gov/18021105/"
+                    target="_blank" rel="noopener noreferrer">
+                    Ref: PubMed[2007]</a>
+                </p>
+              </ul>
+            </div>
+          </details>
+
+
 
           <!-- results area -->
           <!-- <div class="resultcard  mt-auto">
