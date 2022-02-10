@@ -87,15 +87,21 @@
 
       <div class="navbar-content">
         <button class="btn  btn-action" type="button" onclick="halfmoon.toggleDarkMode()" aria-label="Toggle dark mode">
-          <i class="lar la-moon"></i>
+          <i id="dm-icon" class="lar la-moon"></i>
         </button>
+        <!-- <div class="custom-switch">
+          <input type="checkbox" id="switch-1" value="" onchange="halfmoon.toggleDarkMode()">
+          <label for="switch-1">Switch 1</label>
+          <i id="dm-icon" class="lar la-moon"></i>
+
+        </div> -->
+
       </div>
 
       <div class="navbar-brand header">
         <h1 class="justify-left font-weight-medium font-size-24 text-primary">PaediSurgery Pal</h1>
       </div>
 
-      <!-- <div class="navbar-content ml-auto mr-20"> -->
       <div class="navbar-content">
         <a href="#aboutmodal" class="btn btn-sm btn-rounded" type="button">About</a>
       </div>
@@ -215,6 +221,26 @@
 
   <!-- VENDOR JS  -->
   <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
+  <!-- <script>
+
+
+    let dm_icon = document.getElementById('dm-icon')
+    let lm_icon = document.getElementById('lm-icon')
+
+    // TOGGLE ICON BASED ON MODE 
+    if (halfmoon.readCookie("halfmoon_preferredMode")) {
+      if (halfmoon.readCookie("halfmoon_preferredMode") == "light-mode") {
+        // Light mode is preferred
+        lm_icon.classList.add('visible')
+        dm_icon.classList.add('invisible')
+      }
+      else if (halfmoon.readCookie("halfmoon_preferredMode") == "dark-mode") {
+        // Dark mode is preferred
+        lm_icon.classList.add('invisible')
+        dm_icon.classList.add('visible')
+      }
+    }
+  </script> -->
 </body>
 
 </html>
