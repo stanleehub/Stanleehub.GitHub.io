@@ -18,7 +18,7 @@
   <title>PsPal 1.1</title>
 </head>
 
-<body>
+<body data-set-preferred-mode-onload="true">
   <!-- BOTTOM BG PIC  -->
   <div class="custom-shape-divider-bottom-1643800295">
     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -83,25 +83,29 @@
     </div>
 
 
-    <nav class="navbar blurme">
-      <div class="navbar-content mt-10">
-        <div class="header container ">
+    <nav class="navbar justify-content-between blurme">
 
-          <h1 class="justify-left font-weight-medium font-size-24 text-primary">PaediSurgery Pal</h1>
-          <!-- <h1 class="appname">Pal</h1> -->
-        </div>
+      <div class="navbar-content">
+        <button class="btn  btn-action" type="button" onclick="halfmoon.toggleDarkMode()" aria-label="Toggle dark mode">
+          <i class="lar la-moon"></i>
+        </button>
       </div>
-      <div class="navbar-content ml-auto mr-20">
-        <a href="#aboutmodal" class="btn btn-sm" type="button">About</a>
+
+      <div class="navbar-brand header">
+        <h1 class="justify-left font-weight-medium font-size-24 text-primary">PaediSurgery Pal</h1>
+      </div>
+
+      <!-- <div class="navbar-content ml-auto mr-20"> -->
+      <div class="navbar-content">
+        <a href="#aboutmodal" class="btn btn-sm btn-rounded" type="button">About</a>
       </div>
     </nav>
 
     <div class="content-wrapper pt-20">
       <div class="container-fluid">
 
-
+        <!-- MENUS LIST   -->
         <div class="row row-eq-spacing-sm">
-
           <div class="col-sm-6">
             <div class="content">
               <a href="drugmate.html">
@@ -207,7 +211,6 @@
     </div>
 
   </div>
-
 
 
   <!-- VENDOR JS  -->
