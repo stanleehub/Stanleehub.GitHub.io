@@ -34,7 +34,7 @@
     </svg>
   </div>
 
-  <div class="page-wrapper with-navbar ">
+  <div id="top" class="page-wrapper with-navbar ">
     <nav class="navbar blurme">
       <div class="navbar-content">
         <div class="header container">
@@ -47,7 +47,7 @@
       </div>
     </nav>
 
-    <div id="top" class="content-wrapper">
+    <div class="content-wrapper">
       <div class="container-fluid p-20">
 
         <!-- FLUID MATE -->
@@ -61,21 +61,12 @@
               <div class="input-group-prepend">
                 <span class="input-group-text">DOB</span>
               </div>
-              <input type="date" class="form-control" placeholder="Years">
+              <input type="date" class="form-control" id="dob">
               <!-- flex-reset = flex: 0 1 auto, w-50 = width: 5rem (50px) -->
               <div class="input-group-append">
                 <span class="input-group-text">GA</span>
               </div>
-
-              <select class="form-control flex-reset w-100">
-                <!-- flex-reset = flex: 0 1 auto, w-50 = width: 10rem (100px) -->
-                <option value="" selected="selected" disabled="disabled">Full term</option>
-                <option value="class-1">Term</option>
-                <option value="class-2">Preterm</option>
-                <option value="class-3">Class 3</option>
-                <option value="class-4">Class 4</option>
-                <option value="class-5">Class 5</option>
-              </select>
+              <input type="number" class="form-control" id="ga">
 
             </div>
           </div>
@@ -104,23 +95,6 @@
 
 
 
-          <!-- header with notes -->
-          <details class="collapse-panel mw-full mb-10" closed>
-            <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
-            <summary class="collapse-header">
-              <span class="hidden-collapse-open">Fluid Calculation Notes</span>
-              <span class="hidden-collapse-closed">Ok Lets talk fluids</span>
-              <br />
-              <span class="text-muted">Fluid requirements, replacements and correctons</span>
-            </summary>
-            <div class="collapse-content">
-              <ul>
-                <li>Enter weight and select fluid category</li>
-
-              </ul> uIt was going to rain, so he better get outside and prepare. Sleeping in his car was never the
-              plan but sometimes things don't work out as planned.
-            </div>
-          </details>
 
           <div class="form-inline mw-full">
 
@@ -162,26 +136,11 @@
 
           </div>
 
-          <!-- results area -->
-          <div class="resultcard  mt-auto">
-            <div class="content" id="fluidresult">
-              <div>
-                <strong></strong>
-                <br>
-                <br>
-              </div>
-            </div>
-          </div>
-
-          <a href="#top" class="btn btn-sm btn-secondary btn-pill">Top</a>
-
+          <!-- FLUID RESULTS BOX  -->
           <details class="collapse-panel mw-full mb-10" closed>
-            <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
-            <summary class="collapse-header">
-              <span class="hidden-collapse-open">Fluid Calculation Notes</span>
-              <span class="hidden-collapse-closed">Ok Lets talk fluids</span>
-              <br />
-              <span class="text-muted">Fluid requirements, replacements and correctons</span>
+            <summary class="collapse-header" id="fluidresult">
+              <span class="hidden-collapse-open"></span>
+              <!-- RESULT FROM JS GOES HERE -->
             </summary>
             <div class="collapse-content">
               <ul>
@@ -192,16 +151,37 @@
             </div>
           </details>
 
+          <button class="btn" data-toggle="tooltip" data-title="Show on all screens" type="button">
+            Default
+          </button>
+
+          <!-- results area -->
+          <!-- <div class="resultcard  mt-auto">
+            <div class="content" id="fluidresult">
+              <div>
+                <strong></strong>
+                <br>
+                <br>
+              </div>
+            </div>
+          </div> -->
+
 
         </div>
       </div>
 
     </div>
-
-    <script src="js/fluid.js"></script>
- 
     <!-- VENDOR JS  -->
     <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
+    <script src="js/fluid.js"></script>
+
+
+    <script>
+      clearresults()
+      function scrolltome() {
+        document.getElementById('top').scrollIntoView({ behavior: 'smooth' });
+      }
+    </script>
 </body>
 
 </html>

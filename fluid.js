@@ -45,7 +45,7 @@ function calculatefluid() {
   let desc = ""
   let temp = 0
   const max_vol = 2000
- 
+
   // console.log(weight);
   if (weight < 1) {
     clearresults()
@@ -79,7 +79,7 @@ function calculatefluid() {
       result = totvol * (maintenance / 100)
       temp = Math.round(result / 24)
       rate = temp.toString() + " mls per hour"
-      desc = 'Plasmalyte in 5% Dextrose <br> <a class="align-right" href="">See other fluids</a>'
+      desc = 'Plasmalyte in 5% Dextrose'
   }
   result = Math.round(result)
   showresult(result, rate, desc)
@@ -96,21 +96,21 @@ function showresult(result, rate, desc) {
   let result_element = document.getElementById('fluidresult')
 
   let answer = document.createElement('div')
+  answer.className = "collapse-header"
 
   answer.innerHTML = '<strong>Volume: <span class="text-success">' + result_text + '</span></strong>' + '<br>' +
-    '<strong>Rate: <span class="text-success">' + rate + '</span></strong>' + '<br>' +
-    '<strong>Fluid type: <span class="text-success">' + desc + '</span></strong>' + '<hr>' +'<br>'+ 
-    '<button onclick="showmeds()" class="container btn btn-small btn-danger m-0">Calculate Common Meds....</button>'
+    '<strong>Rate: <span class="">' + rate + '</span></strong>' + '<br>' +
+    '<strong>Fluid type: <span class="text-success">' + desc + '</span></strong>' + '<hr>' + '<br>' +
 
-  result_element.appendChild(answer)
+    result_element.appendChild(answer)
 }
 
 function clearresults() {
   let resultel = document.getElementById('fluidresult')
-  resultel.innerHTML = ""
+  console.log(k);
+  // let resultel = document.getElementById('clearfluidresult')
+  resultel.innerHTML = '<span class="hidden-collapse-open">Results shown here (expand for notes)</span>'
+
 }
 
-function showmeds(){
-  console.log('test');
-  window.location.href = '#medmodal'; //show med modal form
-}
+
