@@ -3,6 +3,8 @@
 html{
   font-family:"Open Sans", sans-serif;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+
 }
 
 /* prevents zoomining in on iphone  */
@@ -112,3 +114,36 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   padding-right: 10px;
 
 }
+
+.menu-icon{
+  height: 32px;
+  width: auto;
+}
+
+/* FIXED BOTTOM MENU FOR SOME PAGES */
+.bottom-menu{
+  z-index: 10;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* SECTIONS FOR FLUID CALC PAGES */
+#enter-weight-age{
+  height: 100vh;
+/* margin: auto; */
+}
+
+#enter-weight-age .iform{
+  position: absolute;
+  /* margin: auto; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+#fluid-section{
+  height: 100vh;
+padding-top: 20px;}

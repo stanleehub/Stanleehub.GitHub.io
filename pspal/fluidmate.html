@@ -53,52 +53,60 @@
 
     </nav>
 
+    <!-- BOTTOM MENU    -->
+    <div class="bottom-menu bg-white py-10">
+      <div class="d-flex justify-content-around">
+        <a href="#enter-weight-age" class="btn btn-primary">Home</a>
+        <a href="#fluid-section" class="btn btn-primary">Fluids</a>
+        <a href="#contact" class="btn btn-primary">Drugs</a>
+        <a href="#contact" class="btn btn-primary">Other</a>
+
+      </div>
+    </div>
+
     <div class="content-wrapper">
       <div class="container-fluid p-20">
 
         <!-- FLUID MATE -->
 
-        <div class="section pt-10">
+        <div id="enter-weight-age">
 
-          <!-- ENTER AGE  -->
-          <div class="form-group">
-
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">DOB</span>
-              </div>
-              <input type="date" class="form-control" id="dob" onfocusout="getAge()">
-              <!-- flex-reset = flex: 0 1 auto, w-50 = width: 5rem (50px) -->
-              <div class="input-group-append">
-                <span class="input-group-text">GA</span>
-              </div>
-              <input type="number" class="form-control" id="ga">
-
-            </div>
-          </div>
-
-          <!-- WEIGHT INPUT   -->
-          <div class="form-group">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text" aria-required="true">Weight</span>
-              </div>
-              <input type="number" class="form-control" value="" id="weight" placeholder="0.00 max 40kg"
-                onkeyup="calculatefluid()">
-              <div class="input-group-append">
-                <span class="input-group-text">kg</span>
+          <div class="iform w-400 mw-full">
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">DOB</span>
+                </div>
+                <input type="date" class="form-control" id="dob" onfocusout="getAge()">
+                <!-- flex-reset = flex: 0 1 auto, w-50 = width: 5rem (50px) -->
+                <div class="input-group-append">
+                  <span class="input-group-text">GA</span>
+                </div>
+                <input type="number" class="form-control" id="ga">
               </div>
             </div>
-          </div>
 
+            <!-- WEIGHT INPUT   -->
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" aria-required="true">Weight</span>
+                </div>
+                <input type="number" class="form-control" value="" id="weight" placeholder="0.00 max 40kg"
+                  onkeyup="calculatefluid()">
+                <div class="input-group-append">
+                  <span class="input-group-text">kg</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="fluid-section">
           <div class="container-fluid d-flex justify-content-center border rounded mb-10 bg-success">
             <span class="text-center"><small>Fluid & Feed Calculations</small></span>
-
           </div>
           <hr>
-
-
-
 
           <div class="form-inline mw-full">
 
@@ -171,37 +179,43 @@
 
           <hr>
 
+        </div>
+
+        <div class="section">
+
+
+
           <div class="container-fluid d-flex justify-content-center border rounded mb-10 bg-primary">
             <span class="text-center"><small>Common Drug Doses</small></span>
           </div>
 
-            <!-- DRUG RESULTS BOX  -->
-            <details class="collapse-panel mw-full mb-10 closed">
-              <summary class="collapse-header bg-transparent border-0 blurme" id="drug-result">
-                <span class="hidden-collapse-open"></span>
-                <!-- RESULT FROM JS GOES HERE -->
-              </summary>
-              <div class="collapse-content p-0">
-                <ul class="weight-notes p-1 ">
-                  <li>Weight estimation based on age</li>
+          <!-- DRUG RESULTS BOX  -->
+          <details class="collapse-panel mw-full mb-10 closed">
+            <summary class="collapse-header bg-transparent border-0 blurme" id="drug-result">
+              <span class="hidden-collapse-open"></span>
+              <!-- RESULT FROM JS GOES HERE -->
+            </summary>
+            <div class="collapse-content p-0">
+              <ul class="weight-notes p-1 ">
+                <li>Weight estimation based on age</li>
+                <ul>
+                  <li class="">Age is:</li>
                   <ul>
-                    <li class="">Age is:</li>
-                    <ul>
-                      <li>
-                        < 12 months:<code class="code">(kg) = (age in months + 9)/2</code>
-                      </li>
-                      <li>1-5 years:<code class="code">(kg) = 2 x (age in years + 5)</code></li>
-                      <li>5-14 years:<code class="code">(kg) = 4 x age in years</code></li>
-                    </ul>
+                    <li>
+                      < 12 months:<code class="code">(kg) = (age in months + 9)/2</code>
+                    </li>
+                    <li>1-5 years:<code class="code">(kg) = 2 x (age in years + 5)</code></li>
+                    <li>5-14 years:<code class="code">(kg) = 4 x age in years</code></li>
                   </ul>
-                  <p class="text-right text-white pb-0 mb-0">
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/18021105/" target="_blank" rel="noopener noreferrer">
-                      Ref: PubMed[2007]</a>
-                  </p>
                 </ul>
-              </div>
-            </details>
-  
+                <p class="text-right text-white pb-0 mb-0">
+                  <a href="https://pubmed.ncbi.nlm.nih.gov/18021105/" target="_blank" rel="noopener noreferrer">
+                    Ref: PubMed[2007]</a>
+                </p>
+              </ul>
+            </div>
+          </details>
+
           <hr>
 
           <div class="container-fluid d-flex justify-content-center border rounded mb-10 bg-danger">
@@ -234,11 +248,12 @@
               </ul>
             </div>
           </details>
+        </div>
 
 
 
-          <!-- results area -->
-          <!-- <div class="resultcard  mt-auto">
+        <!-- results area -->
+        <!-- <div class="resultcard  mt-auto">
             <div class="content" id="fluidresult">
               <div>
                 <strong></strong>
@@ -249,7 +264,7 @@
           </div> -->
 
 
-        </div>
+        <!-- </div> -->
       </div>
 
     </div>
