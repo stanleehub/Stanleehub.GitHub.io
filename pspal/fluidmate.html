@@ -56,10 +56,10 @@
     <!-- BOTTOM MENU    -->
     <div class="bottom-menu bg-white py-10">
       <div class="d-flex justify-content-around">
-        <a href="#enter-weight-age" class="btn btn-primary">Home</a>
-        <a href="#fluid-section" class="btn btn-primary">Fluids</a>
-        <a href="#contact" class="btn btn-primary">Drugs</a>
-        <a href="#contact" class="btn btn-primary">Other</a>
+        <a href="#enter-weight-age" class="btn btn-rounded"><i class="la la-arrow-up"></i>Top </a>
+        <a href="#fluid-section" class="btn btn-primary btn-rounded">Fluids</a>
+        <a href="#drugs" class="btn btn-success btn-rounded">Drugs</a>
+        <a href="#contact" class="btn btn-danger btn-rounded">Other</a>
 
       </div>
     </div>
@@ -67,11 +67,12 @@
     <div class="content-wrapper">
       <div class="container-fluid p-20">
 
-        <!-- FLUID MATE -->
+        <div id="enter-weight-age" class="">
 
-        <div id="enter-weight-age">
-
-          <div class="iform w-400 mw-full">
+          <!-- ENTER DOB  -->
+          <div class="container pt-20 w-350 mw-full">
+            <h3 class="text-center font-size-16">Enter Required Parameter(s)</h3>
+            <hr>
             <div class="form-group">
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -79,7 +80,13 @@
                 </div>
                 <input type="date" class="form-control" id="dob" onfocusout="getAge()">
                 <!-- flex-reset = flex: 0 1 auto, w-50 = width: 5rem (50px) -->
-                <div class="input-group-append">
+              </div>
+            </div>
+
+            <!-- ENTER GEST Age -->
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
                   <span class="input-group-text">GA</span>
                 </div>
                 <input type="number" class="form-control" id="ga">
@@ -103,11 +110,11 @@
         </div>
 
         <div id="fluid-section">
-          <div class="container-fluid d-flex justify-content-center border rounded mb-10 bg-success">
-            <span class="text-center"><small>Fluid & Feed Calculations</small></span>
+          <div class="container-fluid d-flex justify-content-center mb-10">
+            <span class="text-center font-size-16">Fluid & Feed Calculations</span>
           </div>
           <hr>
-
+          <p class="text-center">Fine-Tune Results</p>
           <div class="form-inline mw-full">
 
 
@@ -123,7 +130,7 @@
                   <option selected="selected" value="full">Full maintenance</option>
                   <option value="postop">24 hour post op</option>
                   <option value="py">Py Correction</option>
-                  <option value="bolus">Bolus</option>
+                  <option value="bolus">Bolus 20mg/kg</option>
                   <option value="custom">Custom: Fluids</option>
                   <option value="feed1">Feeds: @ 120mls/kg</option>
                   <option value="feed2">Feeds: @ 150mls</option>
@@ -181,9 +188,7 @@
 
         </div>
 
-        <div class="section">
-
-
+        <div id="drugs">
 
           <div class="container-fluid d-flex justify-content-center border rounded mb-10 bg-primary">
             <span class="text-center"><small>Common Drug Doses</small></span>

@@ -89,13 +89,13 @@ function calculatefluid() {
 
 
 function showresult(result, rate, desc) {
-  let result_text = result.toString() + " mls"
-
+  let result_text = '<span class="font-weight-bold text-success">' + result.toString() + '</span>' + ' mls'
+  rate = '<span class="font-weight-bold text-success">' + rate + '</span>'
   clearresults()
 
   let result_element = document.getElementById('fluid-result')
   let answer = document.createElement('div')
-  answer.innerHTML = '<span>Total Volume/24hrs: ' + result_text + '</span>' + '<br>' +
+  answer.innerHTML = '<span>Total Volume in 24hrs: ' + result_text + '</span>' + '<br>' +
     '<span class="">Rate: ' + rate + '</span>' + '<br>' +
     '<span class="">Fluid type: ' + desc + '</span>'
 
@@ -130,15 +130,15 @@ function getAge() {
   var dobDate = parseInt(mdate.substring(8, 10), 10);
 
   var today = new Date();
-  var birthday = new Date(dobYear, dobMonth - 1, dobDate);
+  // var birthday = new Date(dobYear, dobMonth - 1, dobDate);
 
   var diffInMillisecond = today.valueOf() - birthday.valueOf();
   var year_age = Math.floor(diffInMillisecond / 31536000000);
   var day_age = Math.floor((diffInMillisecond % 31536000000) / 86400000);
 
-  if ((today.getMonth() == birthday.getMonth()) && (today.getDate() == birthday.getDate())) {
-    alert("Happy Birthday!");
-  }
+  // if ((today.getMonth() == birthday.getMonth()) && (today.getDate() == birthday.getDate())) {
+  //   alert("Happy Birthday!");
+  // }
 
   var month_age = Math.floor(day_age / 30);
   day_ageday_age = day_age % 30;
@@ -148,18 +148,18 @@ function getAge() {
 
   // console.log(year_age + " years " + month_age + " months " + day_age + " days")
 
-  showAge(year_age,month_age,day_age)
-}  
+  showAge(year_age, month_age, day_age)
+}
 
-function showAge(years,months,days){
+function showAge(years, months, days) {
   clearresults()
 
   let result_element = document.getElementById('weight-result')
   let answer = document.createElement('div')
-  answer.innerHTML = '<span>Age: ' + years + " years " + months + " months " + days + " days"+ '</span>' + '<br>' +
+  answer.innerHTML = '<span>Age: ' + years + " years " + months + " months " + days + " days" + '</span>' + '<br>' +
     // '<span class="">Rate: ' + rate + '</span>' + '<br>' +
     // '<span class="">Fluid type: ' + desc + '</span>'
 
-  result_element.appendChild(answer)
+    result_element.appendChild(answer)
 
 }
