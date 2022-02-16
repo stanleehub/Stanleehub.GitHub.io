@@ -1,3 +1,11 @@
+//GLOBALS 
+var PatAge = {
+  days: 0,
+  months: 0,
+  years: 0
+}
+
+
 function fluidselected() {
   // This functions: updates when a fluid type is selected from the dropdwon
 
@@ -41,6 +49,7 @@ function calculatefluid() {
   let fluidtype = document.getElementById('select-fluid').value
   let weight_context = document.getElementById('weight-context')
 
+
   let totvol = 0
   let rate = ""
   let desc = ""
@@ -55,11 +64,9 @@ function calculatefluid() {
     weight_context.innerHTML = "Tip: Enter DOB for more accurate results"
   } else if (weight > 40) {
     weight_context.innerHTML = "Maximum weight of 40kg will be used for fluid calculations"
-  }else{
+  } else {
     weight_context.innerHTML = ""
   }
-
-
 
   switch (fluidtype) {
     case "bolus":
@@ -76,26 +83,33 @@ function calculatefluid() {
       desc = '0.9% NaCl + 10mmol KCL <br><small>Also add replacements ml for ml</small>'
       break
     default:
-      if (weight > 40) {
-        totvol = max_vol
-      } else if (weight <= 10) {
-        totvol = weight * 100
-      } else if (weight <= 20) {
-        totvol = 1000 + ((weight - 10) * 50)
-      } else {
-        totvol = 1500 + ((weight - 20) * 20)
+      //determine total volume for maintenance
+      switch(isNeonate()){
+        case false:
+          if (weight > 40) {
+            totvol = max_vol
+          } else if (weight <= 10) {
+            totvol = weight * 100
+          } else if (weight <= 20) {
+            totvol = 1000 + ((weight - 10) * 50)
+          } else {
+            totvol = 1500 + ((weight - 20) * 20)
+          }
+    
+          result = totvol * (maintenance / 100)
+          temp = Math.round(result / 24)
+          rate = temp.toString() + " mls per hour"
+          desc = 'Plasmalyte in 5% Dextrose'
+          break;
+        default:
+          alert("neonate calculations")
+    
       }
-      result = totvol * (maintenance / 100)
-      temp = Math.round(result / 24)
-      rate = temp.toString() + " mls per hour"
-      desc = 'Plasmalyte in 5% Dextrose'
   }
   result = Math.round(result)
   showresult(result, rate, desc)
 
 }
-
-
 
 function showresult(result, rate, desc) {
   let result_text = '<span class="font-weight-bold text-success">' + result.toString() + '</span>' + ' mls'
@@ -115,9 +129,6 @@ function clearresults() {
   let fr = document.getElementById('fluid-result')
   let wr = document.getElementById('weight-result')
   let dr = document.getElementById('drug-result')
-  // let weight_context = document.getElementById('weight-context')
-
-  // weight_context.innerHTML = ""
 
   fr.innerHTML = '<span class="font-size-12 text-muted">Fluid result shown below (expand for notes).</span>'
   wr.innerHTML = '<span class="font-size-12 text-muted">Weight result shown below (expand for notes).</span>'
@@ -141,7 +152,7 @@ function getAge() {
   var dobDate = parseInt(mdate.substring(8, 10), 10);
 
   var today = new Date();
-  // var birthday = new Date(dobYear, dobMonth - 1, dobDate);
+  var birthday = new Date(dobYear, dobMonth - 1, dobDate);
 
   var diffInMillisecond = today.valueOf() - birthday.valueOf();
   var year_age = Math.floor(diffInMillisecond / 31536000000);
@@ -158,8 +169,12 @@ function getAge() {
   var tDays = (tMnt * 30) + day_age;
 
   // console.log(year_age + " years " + month_age + " months " + day_age + " days")
+  PatAge.days = day_age
+  PatAge.months = month_age
+  PatAge.years = year_age
 
   showAge(year_age, month_age, day_age)
+
 }
 
 function showAge(years, months, days) {
@@ -173,4 +188,14 @@ function showAge(years, months, days) {
 
     result_element.appendChild(answer)
 
+}
+
+function isNeonate() {
+  // let key = Object.keys(PatAge)
+  // let ans = true
+  if (PatAge.months ==0 && PatAge.years==0 && PatAge.days>0){
+    return true
+  }else{
+    return false
+  }
 }
