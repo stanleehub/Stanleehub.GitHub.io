@@ -39,6 +39,7 @@ function calculatefluid() {
   let maintenancetype = document.getElementById('select-fluid').value
   let maintenance = Number(document.getElementById('maintenance').value)
   let fluidtype = document.getElementById('select-fluid').value
+  let weight_context = document.getElementById('weight-context')
 
   let totvol = 0
   let rate = ""
@@ -49,8 +50,16 @@ function calculatefluid() {
   // console.log(weight);
   if (weight < 1) {
     clearresults()
-    return console.log("Weight limit not valid")
+    weight_context.innerHTML = ""
+  } else if (weight > 1 && weight <= 10) {
+    weight_context.innerHTML = "Tip: Enter DOB for more accurate results"
+  } else if (weight > 40) {
+    weight_context.innerHTML = "Maximum weight of 40kg will be used for fluid calculations"
+  }else{
+    weight_context.innerHTML = ""
   }
+
+
 
   switch (fluidtype) {
     case "bolus":
@@ -106,7 +115,9 @@ function clearresults() {
   let fr = document.getElementById('fluid-result')
   let wr = document.getElementById('weight-result')
   let dr = document.getElementById('drug-result')
+  // let weight_context = document.getElementById('weight-context')
 
+  // weight_context.innerHTML = ""
 
   fr.innerHTML = '<span class="font-size-12 text-muted">Fluid result shown below (expand for notes).</span>'
   wr.innerHTML = '<span class="font-size-12 text-muted">Weight result shown below (expand for notes).</span>'

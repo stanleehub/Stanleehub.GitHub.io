@@ -73,6 +73,20 @@
           <div class="container pt-20 w-350 mw-full">
             <h3 class="text-center font-size-16">Enter Required Parameter(s)</h3>
             <hr>
+
+            <!-- ENTER GEST Age -->
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">G.A.</span>
+                </div>
+                <input type="number" class="form-control" id="ga">
+                <div class="input-group-append">
+                  <span class="input-group-text">weeks</span>
+                </div>
+              </div>
+            </div>
+
             <div class="form-group">
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -80,16 +94,6 @@
                 </div>
                 <input type="date" class="form-control" id="dob" onfocusout="getAge()">
                 <!-- flex-reset = flex: 0 1 auto, w-50 = width: 5rem (50px) -->
-              </div>
-            </div>
-
-            <!-- ENTER GEST Age -->
-            <div class="form-group">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">GA</span>
-                </div>
-                <input type="number" class="form-control" id="ga">
               </div>
             </div>
 
@@ -106,6 +110,9 @@
                 </div>
               </div>
             </div>
+
+            <h3 id="weight-context" class="text-center font-size-14"></h3>
+            <hr>
           </div>
         </div>
 

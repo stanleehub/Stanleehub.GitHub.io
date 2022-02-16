@@ -50,12 +50,27 @@
       </div>
     </nav>
 
-    <div class="bottom-menu bg-white py-10">
+    <div class="bottom-menu bg-dark py-10">
       <div class="d-flex justify-content-around">
-        <a href="#home" class="btn btn-primary">Home</a>
-        <a href="#news" class="btn btn-primary">Add New</a>
-        <a href="#contact" class="btn btn-primary">Clear All</a>
-
+        <div class="input-group px-20">
+          <div class="w-100"> 
+            <select class="input-group-prepend form-control" id="select-task" size="4" onchange="fluidselected()">
+              <option selected="selected" value="full">TODO:</option>
+              <option value="postop">CHASE:</option>
+              <option value="py">BLOODS:</option>
+              <option value="bolus">CALL:</option>
+            </select>
+          </div>
+          <input type="text" class="form-control" placeholder="Enter details" required="required">
+          <div class="input-group-append">
+            <button class="btn" type="submit">
+              <i class="la la-plus" aria-hidden="true"></i>
+              <!-- <span class="sr-only-focusable">Add Task</span> sr-only = show only on screen readers -->
+            </button>
+          </div>
+        </div>
+        
+        <!-- <a href="#contact" class="btn btn-primary">Clear All</a> -->
       </div>
 
     </div>
@@ -63,9 +78,87 @@
     <div class="content-wrapper pt-20">
       <div class="container-fluid">
 
-        <!-- BOTTOM MENU    -->
+        <div class="d-flex flex-wrap">
+          <div class="card w-350 p-10 my-10">
+            <h2 class="card-title font-size-14 pb-0 mb-0">
+              TODO:
+            </h2>
+            <p class="font-size-14 p-0 m-0 text-primary">
+              Subtitle that hooks the reader and prompts them to click on the read more button.
+            </p>
+            <div class="d-flex justify-content-between align-items-end"> <!-- text-right = text-align: right -->
+              <span class=""><i class="la la-calendar"></i><small>22/2/2022</small></span>
+              <a href="#" class="btn btn-sm btn-rounded mt-5"><i class="la la-trash"></i> Clear</a>
+            </div>
+          </div>
 
+          <div class="card w-350 p-10 my-10">
+            <h2 class="card-title font-size-14 pb-0 mb-0">
+              TODO:
+            </h2>
+            <p class="font-size-14 p-0 m-0 text-primary">
+              Subtitle that hooks the reader and prompts them to click on the read more button.
+            </p>
+            <div class="d-flex justify-content-between align-items-end"> <!-- text-right = text-align: right -->
+              <span class=""><i class="la la-calendar"></i><small>22/2/2022</small></span>
+              <a href="#" class="btn btn-sm btn-rounded mt-5"><i class="la la-trash"></i> Clear</a>
+            </div>
+          </div>
 
+          <div class="card w-350 p-10 my-10">
+            <h2 class="card-title font-size-14 pb-0 mb-0">
+              TODO:
+            </h2>
+            <p class="font-size-14 p-0 m-0 text-primary">
+              Subtitle that hooks the reader and prompts them to click on the read more button.
+            </p>
+            <div class="d-flex justify-content-between align-items-end"> <!-- text-right = text-align: right -->
+              <span class=""><i class="la la-calendar"></i><small>22/2/2022</small></span>
+              <a href="#" class="btn btn-sm btn-rounded mt-5"><i class="la la-trash"></i> Clear</a>
+            </div>
+          </div>
+
+          <div class="card w-350 p-10 my-10">
+            <h2 class="card-title font-size-14 pb-0 mb-0">
+              TODO:
+            </h2>
+            <p class="font-size-14 p-0 m-0 text-primary">
+              Subtitle that hooks the reader and prompts them to click on the read more button.
+            </p>
+            <div class="d-flex justify-content-between align-items-end"> <!-- text-right = text-align: right -->
+              <span class=""><i class="la la-calendar"></i><small>22/2/2022</small></span>
+              <a href="#" class="btn btn-sm btn-rounded mt-5"><i class="la la-trash"></i> Clear</a>
+            </div>
+          </div>
+
+          <div class="card w-350 p-10 my-10">
+            <h2 class="card-title font-size-14 pb-0 mb-0">
+              TODO:
+            </h2>
+            <p class="font-size-14 p-0 m-0 text-primary">
+              Subtitle that hooks the reader and prompts them to click on the read more button.
+            </p>
+            <div class="d-flex justify-content-between align-items-end"> <!-- text-right = text-align: right -->
+              <span class=""><i class="la la-calendar"></i><small>22/2/2022</small></span>
+              <a href="#" class="btn btn-sm btn-rounded mt-5"><i class="la la-trash"></i> Clear</a>
+            </div>
+          </div>
+
+          <div class="card w-350 p-10 my-10">
+            <h2 class="card-title font-size-14 pb-0 mb-0">
+              TODO:
+            </h2>
+            <p class="font-size-14 p-0 m-0 text-primary">
+              Subtitle that hooks the reader and prompts them to click on the read more button.
+            </p>
+            <div class="d-flex justify-content-between align-items-end"> <!-- text-right = text-align: right -->
+              <span class=""><i class="la la-calendar"></i><small>22/2/2022</small></span>
+              <a href="#" class="btn btn-sm btn-rounded mt-5"><i class="la la-trash"></i> Clear</a>
+            </div>
+          </div>
+
+          
+         
         <div class="row">
           <div class="col-11 h-100">
             <h1 class="mark"></h1>Coming Soon...</h1>
