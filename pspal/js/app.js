@@ -1,5 +1,5 @@
 //  // Import the functions you need from the SDKs you need
- 
+
 //  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
 //  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js";
 //  import { getDatabase } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-database.js";
@@ -28,3 +28,25 @@
 
 //    const dbRef = firebase.database().ref(); 
 // const usersRef = dbRef.child(‘users’);
+
+/* Storing user's device details in a variable*/
+let details = navigator.userAgent;
+
+/* Creating a regular expression 
+containing some mobile devices keywords 
+to search it in details string*/
+let regexp = /android|iphone|kindle|ipad/i;
+let iphoneonly = /iphone|ipad/i;
+
+/* Using test() method to search regexp in details
+it returns boolean value*/
+let isMobileDevice = regexp.test(details);
+let isiPhone = regexp.test(details)
+
+if (isMobileDevice) {
+  if (isiPhone) {
+    console.log("You are using a Mobile Device");
+  } else {
+    alert('This app is Best used on iOS/iPhones')
+  }
+}
