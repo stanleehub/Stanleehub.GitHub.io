@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
   <meta name="viewport" content="width=device-width" />
-  
+
   <!-- full screen for ios and android -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
@@ -119,7 +119,9 @@
               <a href="tasks.html">
                 <div class="alert alert-primary" role="alert">
                   <h4 class="alert-heading">My Tasks</h4>
-                  A handy for jobs/notes
+                  <div class="text-center">
+                    <span id="task-count" class="badge badge-danger badge-pill invisible">2 pending</span>
+                  </div>
                 </div>
               </a>
             </div>
@@ -237,6 +239,24 @@
 
   <!-- VENDOR JS  -->
   <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
+
+  <script>
+    const mytasks = localStorage.getItem('tasks');
+    const taskcount = document.getElementById('task-count')
+    // if reference exists
+    if (mytasks) {
+      // converts back to array and store it in todos array
+      let all = JSON.parse(mytasks);
+      let num = all.length
+      if (num >= 1) {
+        taskcount.classList.remove('invisible')
+        taskcount.innerText = all.length + " pending"
+
+      } else {
+        taskcount.classList.add('invisible')
+      }
+    }
+  </script>
   <!-- <script>
 
 
@@ -258,7 +278,7 @@
       }
     }
   </script> -->
-  <script src="js/app.js"></script>
+  <!-- <script src="js/app.js"></script> -->
 
 
 </body>
