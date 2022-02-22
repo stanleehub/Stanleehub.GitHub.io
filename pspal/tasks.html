@@ -85,23 +85,27 @@
   <div class="content-wrapper pt-20">
     <div class="container-fluid">
 
+
       <div class="d-flex flex-wrap" id="task-list">
 
         <!-- dummy task  -->
         <!-- <div class="card w-350 p-10 my-10">
-            <h2 class="card-title font-size-14 pb-0 mb-0">TODO:</h2>
-            <p class="font-size-14 p-0 m-0 text-primary">
-              Subtitle that hooks the reader and prompts them to click on the read more button.
-            </p>
-            <div class="d-flex justify-content-between align-items-end">
-              <span class=""><i class="la la-calendar"></i><small>22/2/2022</small></span>
-              <button type="submit" class="btn btn-sm btn-rounded mt-5 delete-button"><i
-                  class="la la-check font-size-18"></i></button>
-            </div>
-          </div> -->
+                <h2 class="card-title font-size-14 pb-0 mb-0">TODO:</h2>
+                <p class="font-size-14 p-0 m-0 text-primary">
+                  Subtitle that hooks the reader and prompts them to click on the read more button.
+                </p>
+                <div class="d-flex justify-content-between align-items-end">
+                  <span class=""><i class="la la-calendar"></i><small>22/2/2022</small></span>
+                  <button type="submit" class="btn btn-sm btn-rounded mt-5 delete-button"><i
+                      class="la la-check font-size-18"></i></button>
+                </div>
+              </div> -->
 
 
       </div>
+
+
+
     </div>
 
   </div>
@@ -123,16 +127,16 @@
 
       todoList.forEach(item => {
         let t = document.createElement("div")
-        t.className = "card w-350 p-10 my-10"
-        // t.setAttribute = ("class", "card w-350 p-10 my-10");
-        t.setAttribute = ("data-key", "LL") //item.tDate)
+        // t.className = "card w-350 p-10 my-10"
+        t.setAttribute("class", "card w-350 p-10 my-10");
+        t.setAttribute("data-key", item.tDate)
         t.innerHTML = '<h2 class="card-title font-size-12 pb-0 mb-0 text-right">' + item.task_type + '</h2>' +
           '<p class="font-size-16 p-0 m-0 text-danger">' + item.task + '</p>' +
           '<div class="d-flex justify-content-between align-items-end">' +
           '<span class=""><i class="la la-calendar"></i><small class="text-muted">' + item.tDate + '</small></span>' +
-          '<button type="submit" onclick="deleteTask(this)" class="btn btn-sm btn-rounded mt-5 delete-button"><i class="la la-check font-size-18"></i></button>' +
+          '<button type="submit" class="btn btn-sm btn-rounded mt-5 delete-button"><i class="la la-check font-size-18 delete-button"></i></button>' +
           '</div>'
-
+        // onclick="deleteTask(this)"
         list.insertBefore(t, list.children[0]);
       });
 
@@ -181,36 +185,28 @@
     }
 
 
-    list.addEventListener('click', deleteTask(event))
-    //  {
-    //   // console.log('clicked ');
+    list.addEventListener('click', function (event) {
+      if (event.target.classList.contains('delete-button')) {
+        if (event.target.type === 'submit') {
+          deleteTask(event.target.parentElement.parentElement.getAttribute('data-key'))
+        }
+        else {
+          //of the icon is clicked
+          deleteTask(event.target.parentElement.parentElement.parentElement.getAttribute('data-key'))
+        }
 
-    //   if (event.target.classList.contains('delete-button')) {
-    //     // get id from data-key attribute's value of parent <li> where the delete-button is present
-    //     // deleteTask(event.target.parentElement.getAttribute('data-key'));
-    //     // console.log(event.target.parentElement.innerHTML);
-    //     console.log(event.target.parentElement.parentElement.getAttribute('data-key'))
-    //     console.log(event.target.parentElement.parentElement.classList)
-    //     // console.log(event.target.parentElement.parentElement.innerHTML)
-    //     console.log(event.target.parentElement.parentElement.outerHTML)
-
-
-    //   }
-
-    // })
+      }
+    })
 
 
-    function deleteTask(event) {
-      //  let id = event.parentNode.innerText
-      // console.log(event.parentNode.innerText)
-      // // filters out the tasklist with the id and updates the todos array
-      alert('wew')
-     //// AllTasks = AllTasks.filter(function (item) {
-        //   // use != not !==, because here types are different. One is number and other is string
-       //// return item.tDate != id;
-     //// });
-      // // update the localStorage
-      ////AddToLocalStorage(AllTasks);
+    function deleteTask(id) {
+      // filters out the tasklist with the id and updates the todos array
+      AllTasks = AllTasks.filter(function (item) {
+        return item.tDate != id;
+      });
+
+      // update the localStorage
+      AddToLocalStorage(AllTasks);
     }
 
 

@@ -11,3 +11,8 @@
   padding: 10px;
   width:  400px;
 }
+
+.container-fluid{
+  margin-top: 0;
+  margin-bottom: 60px!important;
+}
