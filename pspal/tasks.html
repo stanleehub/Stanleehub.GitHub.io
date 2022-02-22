@@ -181,7 +181,8 @@
     }
 
 
-    // list.addEventListener('click', function (event) {
+    list.addEventListener('click', deleteTask(event))
+    //  {
     //   // console.log('clicked ');
 
     //   if (event.target.classList.contains('delete-button')) {
@@ -194,24 +195,22 @@
     //     console.log(event.target.parentElement.parentElement.outerHTML)
 
 
-
-
-
     //   }
+
     // })
 
 
     function deleteTask(event) {
-      let id = event.parentNode.innerText
+      //  let id = event.parentNode.innerText
       // console.log(event.parentNode.innerText)
-      alert('pressed')
       // // filters out the tasklist with the id and updates the todos array
-      AllTasks = AllTasks.filter(function (item) {
+      alert('wew')
+     //// AllTasks = AllTasks.filter(function (item) {
         //   // use != not !==, because here types are different. One is number and other is string
-        return item.tDate != id;
-      });
+       //// return item.tDate != id;
+     //// });
       // // update the localStorage
-      AddToLocalStorage(AllTasks);
+      ////AddToLocalStorage(AllTasks);
     }
 
 
