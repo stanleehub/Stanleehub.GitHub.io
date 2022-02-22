@@ -56,35 +56,39 @@
 
     <div class="bottom-menu blurme py-10">
       <div class="d-flex justify-content-around">
-        <div class="input-group px-20">
-          <div class="w-100">
-            <select class="input-group-prepend form-control" id="task-type" size="3">
-              <option selected="selected" value="TODO">TODO:</option>
-              <option value="CHASE">CHASE:</option>
-              <option value="CALL">CALL:</option>
-            </select>
-          </div>
-          <input type="text" class="form-control" placeholder="Enter details" required="required" id="task-entry">
-          <div class="input-group-append">
-            <button class="btn" type="submit" onclick="addTask();return false">
-              <i class="la la-plus font-size-22" aria-hidden="true"></i>
-              <!-- <span class="sr-only-focusable">Add Task</span> sr-only = show only on screen readers -->
-            </button>
-          </div>
-        </div>
+        <form>
+          <div class="input-group px-20">
+            <div class="w-100">
+              <select class="input-group-prepend form-control" id="task-type" size="3">
+                <option selected="selected" value="TODO">TODO:</option>
+                <option value="CHASE">CHASE:</option>
+                <option value="CALL">CALL:</option>
+              </select>
+            </div>
 
-        <!-- <a href="#contact" class="btn btn-primary">Clear All</a> -->
+            <input type="text" class="form-control" placeholder="Enter details" required="required" id="task-entry">
+            <div class="input-group-append">
+              <button class="btn" type="submit" onclick="addTask();return false">
+                <i class="la la-plus font-size-22" aria-hidden="true"></i>
+                <!-- <span class="sr-only-focusable">Add Task</span> sr-only = show only on screen readers -->
+              </button>
+            </div>
+        </form>
+
       </div>
 
+      <!-- <a href="#contact" class="btn btn-primary">Clear All</a> -->
     </div>
 
-    <div class="content-wrapper pt-20">
-      <div class="container-fluid">
+  </div>
 
-        <div class="d-flex flex-wrap" id="task-list">
+  <div class="content-wrapper pt-20">
+    <div class="container-fluid">
 
-          <!-- dummy task  -->
-          <!-- <div class="card w-350 p-10 my-10">
+      <div class="d-flex flex-wrap" id="task-list">
+
+        <!-- dummy task  -->
+        <!-- <div class="card w-350 p-10 my-10">
             <h2 class="card-title font-size-14 pb-0 mb-0">TODO:</h2>
             <p class="font-size-14 p-0 m-0 text-primary">
               Subtitle that hooks the reader and prompts them to click on the read more button.
@@ -97,116 +101,120 @@
           </div> -->
 
 
-        </div>
       </div>
-
     </div>
 
+  </div>
 
 
-    <!-- VENDOR JS  -->
-    <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
-    <script>
 
-      const list = document.getElementById("task-list");
+  <!-- VENDOR JS  -->
+  <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
+  <script>
 
-      let AllTasks = []
+    const list = document.getElementById("task-list");
 
-      function renderTodos(todoList) {
+    let AllTasks = []
 
-        //clear list
-        list.innerHTML = ''
+    function renderTodos(todoList) {
 
-        todoList.forEach(item => {
-          let t = document.createElement("div")
-          t.className = "card w-350 p-10 my-10"
-          // t.setAttribute = ("class", "card w-350 p-10 my-10");
-          t.setAttribute = ("data-key", "LL") //item.tDate)
-          t.innerHTML = '<h2 class="card-title font-size-14 pb-0 mb-0">' + item.task_type + '</h2>' +
-            '<p class="font-size-14 p-0 m-0 text-primary">' + item.task + '</p>' +
-            '<div class="d-flex justify-content-between align-items-end">' +
-            '<span class=""><i class="la la-calendar"></i><small>' + item.tDate + '</small></span>' +
-            '<button data-key=' + item.iDate + ' type="submit" class="btn btn-sm btn-rounded mt-5 delete-button"><i class="la la-check font-size-18"></i></button>' +
-            '</div>'
+      //clear list
+      list.innerHTML = ''
 
-          list.insertBefore(t, list.children[0]);
-        });
+      todoList.forEach(item => {
+        let t = document.createElement("div")
+        t.className = "card w-350 p-10 my-10"
+        // t.setAttribute = ("class", "card w-350 p-10 my-10");
+        t.setAttribute = ("data-key", "LL") //item.tDate)
+        t.innerHTML = '<h2 class="card-title font-size-14 pb-0 mb-0">' + item.task_type + '</h2>' +
+          '<p class="font-size-14 p-0 m-0 text-primary">' + item.task + '</p>' +
+          '<div class="d-flex justify-content-between align-items-end">' +
+          '<span class=""><i class="la la-calendar"></i><small>' + item.tDate + '</small></span>' +
+          '<button data-key=' + item.iDate + ' type="submit" class="btn btn-sm btn-rounded mt-5 delete-button"><i class="la la-check font-size-18"></i></button>' +
+          '</div>'
 
+        list.insertBefore(t, list.children[0]);
+      });
+
+    }
+
+    function loadTasks() {
+      const reference = localStorage.getItem('tasks');
+      // if reference exists
+      if (reference) {
+        // converts back to array and store it in todos array
+        AllTasks = JSON.parse(reference);
+        renderTodos(AllTasks);
+      }
+    }
+
+    function addTask() {
+      const task = document.getElementById("task-entry");
+      const task_type = document.getElementById("task-type")
+      // const list = document.getElementById("task-list");
+
+      const d = new Date();
+
+      // return if task is empty
+      if (task.value === "") {
+        return false;
       }
 
-      function loadTasks() {
-        const reference = localStorage.getItem('tasks');
-        // if reference exists
-        if (reference) {
-          // converts back to array and store it in todos array
-          AllTasks = JSON.parse(reference);
-          renderTodos(AllTasks);
-        }
+      //put this task in array object
+      const thisTask = {
+        task: task.value,
+        task_type: task_type.value,
+        tDate: d.toDateString() + ' - ' + d.toLocaleTimeString()
       }
 
-      function addTask() {
-        const task = document.getElementById("task-entry");
-        const task_type = document.getElementById("task-type")
-        // const list = document.getElementById("task-list");
+      //add to all task
+      AllTasks.push(thisTask)
+      AddToLocalStorage(AllTasks)
+      //empty task input
+      task.value = ""
+    }
 
-        const d = new Date();
+    function AddToLocalStorage(AllTasks) {
+      //add to local storage
+      localStorage.setItem("tasks", JSON.stringify(AllTasks))
+      renderTodos(AllTasks)
+    }
 
-        // return if task is empty
-        if (task.value === "") {
-          return false;
-        }
 
-        //put this task in array object
-        const thisTask = {
-          task: task.value,
-          task_type: task_type.value,
-          tDate: d.toDateString() + ' - ' + d.toLocaleTimeString()
-        }
+    list.addEventListener('click', function (event) {
+      // console.log('clicked ');
 
-        //add to all task
-        AllTasks.push(thisTask)
-        AddToLocalStorage(AllTasks)
-        //empty task input
-        task.value = ""
+      if (event.target.classList.contains('delete-button')) {
+        // get id from data-key attribute's value of parent <li> where the delete-button is present
+        // deleteTask(event.target.parentElement.getAttribute('data-key'));
+        // console.log(event.target.parentElement.innerHTML);
+        console.log(event.target.parentElement.parentElement.getAttribute('data-key'))
+        console.log(event.target.parentElement.parentElement.classList)
+        // console.log(event.target.parentElement.parentElement.innerHTML)
+        console.log(event.target.parentElement.parentElement.outerHTML)
+
+
+
+
+
       }
-
-      function AddToLocalStorage(AllTasks) {
-        //add to local storage
-        localStorage.setItem("tasks", JSON.stringify(AllTasks))
-        renderTodos(AllTasks)
-      }
+    })
 
 
-      list.addEventListener('click', function (event) {
-        // console.log('clicked ');
-
-        if (event.target.classList.contains('delete-button')) {
-          // get id from data-key attribute's value of parent <li> where the delete-button is present
-          // deleteTask(event.target.parentElement.getAttribute('data-key'));
-          // console.log(event.target.parentElement.innerHTML);
-          console.log(event.target.parentElement.parentElement.getAttribute('data-key'))
-          console.log(event.target.parentElement.parentElement.classList)
-          // console.log(event.target.parentElement.parentElement.innerHTML)
-          console.log(event.target.parentElement.parentElement.outerHTML)
+    function deleteTask(id) {
+      // filters out the tasklist with the id and updates the todos array
+      AllTasks = AllTasks.filter(function (item) {
+        // use != not !==, because here types are different. One is number and other is string
+        return item.tDate != tDate;
+      });
+      // update the localStorage
+      addToLocalStorage(AllTasks);
+    }
 
 
-
-
-
-        }
-      })
-
-
-      function deleteTask(id) {
-        // filters out the tasklist with the id and updates the todos array
-        AllTasks = AllTasks.filter(function (item) {
-          // use != not !==, because here types are different. One is number and other is string
-          return item.tDate != tDate;
-        });
-        // update the localStorage
-        addToLocalStorage(AllTasks);
-      }
-    </script>
+      // reference for localStorage manipulation
+      // https://thecodingpie.medium.com/how-to-build-a-todo-list-app-with-javascript-and-local-storage-a884f4ea3ec
+  </script>
 </body>
 
 </html>
