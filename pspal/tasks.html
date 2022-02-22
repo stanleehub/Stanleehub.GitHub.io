@@ -9,7 +9,7 @@
   <!-- full screen for ios and android -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
-  
+
 
   <!-- 'Vendor CSS' -->
   <link rel="stylesheet"
@@ -23,7 +23,7 @@
   <title>PsPal 1.1</title>
 </head>
 
-<body data-set-preferred-mode-onload="true">
+<body data-set-preferred-mode-onload="true" onload="loadTasks()">
   <!-- BOTTOM BG PIC  -->
   <div class="custom-shape-divider-bottom-1643800295">
     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -54,26 +54,25 @@
       </div>
     </nav>
 
-    <div class="bottom-menu bg-dark py-10">
+    <div class="bottom-menu blurme py-10">
       <div class="d-flex justify-content-around">
         <div class="input-group px-20">
-          <div class="w-100"> 
-            <select class="input-group-prepend form-control" id="select-task" size="4" onchange="fluidselected()">
-              <option selected="selected" value="full">TODO:</option>
-              <option value="postop">CHASE:</option>
-              <option value="py">BLOODS:</option>
-              <option value="bolus">CALL:</option>
+          <div class="w-100">
+            <select class="input-group-prepend form-control" id="task-type" size="3">
+              <option selected="selected" value="TODO">TODO:</option>
+              <option value="CHASE">CHASE:</option>
+              <option value="CALL">CALL:</option>
             </select>
           </div>
-          <input type="text" class="form-control" placeholder="Enter details" required="required">
+          <input type="text" class="form-control" placeholder="Enter details" required="required" id="task-entry">
           <div class="input-group-append">
-            <button class="btn" type="submit">
-              <i class="la la-plus" aria-hidden="true"></i>
+            <button class="btn" type="submit" onclick="addTask();return false">
+              <i class="la la-plus font-size-22" aria-hidden="true"></i>
               <!-- <span class="sr-only-focusable">Add Task</span> sr-only = show only on screen readers -->
             </button>
           </div>
         </div>
-        
+
         <!-- <a href="#contact" class="btn btn-primary">Clear All</a> -->
       </div>
 
@@ -82,116 +81,132 @@
     <div class="content-wrapper pt-20">
       <div class="container-fluid">
 
-        <div class="d-flex flex-wrap">
-          <div class="card w-350 p-10 my-10">
-            <h2 class="card-title font-size-14 pb-0 mb-0">
-              TODO:
-            </h2>
+        <div class="d-flex flex-wrap" id="task-list">
+
+          <!-- dummy task  -->
+          <!-- <div class="card w-350 p-10 my-10">
+            <h2 class="card-title font-size-14 pb-0 mb-0">TODO:</h2>
             <p class="font-size-14 p-0 m-0 text-primary">
               Subtitle that hooks the reader and prompts them to click on the read more button.
             </p>
-            <div class="d-flex justify-content-between align-items-end"> <!-- text-right = text-align: right -->
+            <div class="d-flex justify-content-between align-items-end">
               <span class=""><i class="la la-calendar"></i><small>22/2/2022</small></span>
-              <a href="#" class="btn btn-sm btn-rounded mt-5"><i class="la la-trash"></i> Clear</a>
+              <button type="submit" class="btn btn-sm btn-rounded mt-5 delete-button"><i
+                  class="la la-check font-size-18"></i></button>
             </div>
-          </div>
+          </div> -->
 
-          <div class="card w-350 p-10 my-10">
-            <h2 class="card-title font-size-14 pb-0 mb-0">
-              TODO:
-            </h2>
-            <p class="font-size-14 p-0 m-0 text-primary">
-              Subtitle that hooks the reader and prompts them to click on the read more button.
-            </p>
-            <div class="d-flex justify-content-between align-items-end"> <!-- text-right = text-align: right -->
-              <span class=""><i class="la la-calendar"></i><small>22/2/2022</small></span>
-              <a href="#" class="btn btn-sm btn-rounded mt-5"><i class="la la-trash"></i> Clear</a>
-            </div>
-          </div>
 
-          <div class="card w-350 p-10 my-10">
-            <h2 class="card-title font-size-14 pb-0 mb-0">
-              TODO:
-            </h2>
-            <p class="font-size-14 p-0 m-0 text-primary">
-              Subtitle that hooks the reader and prompts them to click on the read more button.
-            </p>
-            <div class="d-flex justify-content-between align-items-end"> <!-- text-right = text-align: right -->
-              <span class=""><i class="la la-calendar"></i><small>22/2/2022</small></span>
-              <a href="#" class="btn btn-sm btn-rounded mt-5"><i class="la la-trash"></i> Clear</a>
-            </div>
-          </div>
-
-          <div class="card w-350 p-10 my-10">
-            <h2 class="card-title font-size-14 pb-0 mb-0">
-              TODO:
-            </h2>
-            <p class="font-size-14 p-0 m-0 text-primary">
-              Subtitle that hooks the reader and prompts them to click on the read more button.
-            </p>
-            <div class="d-flex justify-content-between align-items-end"> <!-- text-right = text-align: right -->
-              <span class=""><i class="la la-calendar"></i><small>22/2/2022</small></span>
-              <a href="#" class="btn btn-sm btn-rounded mt-5"><i class="la la-trash"></i> Clear</a>
-            </div>
-          </div>
-
-          <div class="card w-350 p-10 my-10">
-            <h2 class="card-title font-size-14 pb-0 mb-0">
-              TODO:
-            </h2>
-            <p class="font-size-14 p-0 m-0 text-primary">
-              Subtitle that hooks the reader and prompts them to click on the read more button.
-            </p>
-            <div class="d-flex justify-content-between align-items-end"> <!-- text-right = text-align: right -->
-              <span class=""><i class="la la-calendar"></i><small>22/2/2022</small></span>
-              <a href="#" class="btn btn-sm btn-rounded mt-5"><i class="la la-trash"></i> Clear</a>
-            </div>
-          </div>
-
-          <div class="card w-350 p-10 my-10">
-            <h2 class="card-title font-size-14 pb-0 mb-0">
-              TODO:
-            </h2>
-            <p class="font-size-14 p-0 m-0 text-primary">
-              Subtitle that hooks the reader and prompts them to click on the read more button.
-            </p>
-            <div class="d-flex justify-content-between align-items-end"> <!-- text-right = text-align: right -->
-              <span class=""><i class="la la-calendar"></i><small>22/2/2022</small></span>
-              <a href="#" class="btn btn-sm btn-rounded mt-5"><i class="la la-trash"></i> Clear</a>
-            </div>
-          </div>
-
-          
-         
-        <div class="row">
-          <div class="col-11 h-100">
-            <h1 class="mark"></h1>Coming Soon...</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quae recusandae impedit odio odit nostrum
-              magnam, minus quidem debitis tenetur quaerat ipsum at, id vero incidunt. Quos eligendi voluptate nemo
-              dolores deserunt porro, reprehenderit minima nobis perferendis dignissimos minus! Asperiores quaerat eaque
-              officia nemo dolore quisquam modi odit soluta. Labore excepturi alias repudiandae iste tenetur. Rerum
-              neque non ipsum perferendis! Doloribus asperiores enim eligendi consequatur temporibus? Officiis eveniet
-              dolores distinctio officia tempora esse voluptates aperiam porro quas a quis, dolorem odio laborum vel
-              amet nobis, delectus, illo maiores nesciunt velit reprehenderit in neque consectetur! Libero aperiam iste
-              in quia pariatur magnam natus tempore similique officiis aliquam quidem veniam illum maiores, facere ad
-              ullam, tempora illo culpa eius quaerat? Aperiam quae tempore tempora unde quidem eligendi aliquid fugit
-              magnam laudantium ad. Accusamus veniam aut, nobis animi beatae obcaecati adipisci optio quidem quisquam
-              unde ut minus earum consequuntur quam distinctio, vel laudantium assumenda corporis? Alias iste facere
-              neque voluptatem, explicabo nulla distinctio eius optio animi quia laboriosam non culpa dolores, at
-              adipisci? Repudiandae expedita magni perspiciatis a maxime placeat quos nostrum, modi eum, voluptates
-              veniam quae unde. Obcaecati ratione consequuntur distinctio, illum ipsam, eius, nobis quidem tempora
-              aliquid similique asperiores cumque officia?</p>
-          </div>
         </div>
       </div>
+
     </div>
 
-  </div>
+
+
+    <!-- VENDOR JS  -->
+    <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
+    <script>
+
+      const list = document.getElementById("task-list");
+
+      let AllTasks = []
+
+      function renderTodos(todoList) {
+
+        //clear list
+        list.innerHTML = ''
+
+        todoList.forEach(item => {
+          let t = document.createElement("div")
+          t.className = "card w-350 p-10 my-10"
+          // t.setAttribute = ("class", "card w-350 p-10 my-10");
+          t.setAttribute = ("data-key", "LL") //item.tDate)
+          t.innerHTML = '<h2 class="card-title font-size-14 pb-0 mb-0">' + item.task_type + '</h2>' +
+            '<p class="font-size-14 p-0 m-0 text-primary">' + item.task + '</p>' +
+            '<div class="d-flex justify-content-between align-items-end">' +
+            '<span class=""><i class="la la-calendar"></i><small>' + item.tDate + '</small></span>' +
+            '<button data-key=' + item.iDate + ' type="submit" class="btn btn-sm btn-rounded mt-5 delete-button"><i class="la la-check font-size-18"></i></button>' +
+            '</div>'
+
+          list.insertBefore(t, list.children[0]);
+        });
+
+      }
+
+      function loadTasks() {
+        const reference = localStorage.getItem('tasks');
+        // if reference exists
+        if (reference) {
+          // converts back to array and store it in todos array
+          AllTasks = JSON.parse(reference);
+          renderTodos(AllTasks);
+        }
+      }
+
+      function addTask() {
+        const task = document.getElementById("task-entry");
+        const task_type = document.getElementById("task-type")
+        // const list = document.getElementById("task-list");
+
+        const d = new Date();
+
+        // return if task is empty
+        if (task.value === "") {
+          return false;
+        }
+
+        //put this task in array object
+        const thisTask = {
+          task: task.value,
+          task_type: task_type.value,
+          tDate: d.toDateString() + ' - ' + d.toLocaleTimeString()
+        }
+
+        //add to all task
+        AllTasks.push(thisTask)
+        AddToLocalStorage(AllTasks)
+        //empty task input
+        task.value = ""
+      }
+
+      function AddToLocalStorage(AllTasks) {
+        //add to local storage
+        localStorage.setItem("tasks", JSON.stringify(AllTasks))
+        renderTodos(AllTasks)
+      }
+
+
+      list.addEventListener('click', function (event) {
+        // console.log('clicked ');
+
+        if (event.target.classList.contains('delete-button')) {
+          // get id from data-key attribute's value of parent <li> where the delete-button is present
+          // deleteTask(event.target.parentElement.getAttribute('data-key'));
+          // console.log(event.target.parentElement.innerHTML);
+          console.log(event.target.parentElement.parentElement.getAttribute('data-key'))
+          console.log(event.target.parentElement.parentElement.classList)
+          // console.log(event.target.parentElement.parentElement.innerHTML)
+          console.log(event.target.parentElement.parentElement.outerHTML)
 
 
 
-  <!-- VENDOR JS  -->
-  <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
+
+
+        }
+      })
+
+
+      function deleteTask(id) {
+        // filters out the tasklist with the id and updates the todos array
+        AllTasks = AllTasks.filter(function (item) {
+          // use != not !==, because here types are different. One is number and other is string
+          return item.tDate != tDate;
+        });
+        // update the localStorage
+        addToLocalStorage(AllTasks);
+      }
+    </script>
 </body>
 
 </html>

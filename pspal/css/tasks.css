@@ -5,3 +5,9 @@
   bottom: 0;
   width: 100%;
 } */
+
+.task-item{
+  margin: 10px;
+  padding: 10px;
+  width:  400px;
+}
