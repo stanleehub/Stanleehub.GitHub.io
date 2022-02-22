@@ -9,7 +9,12 @@
 
   <!-- full screen for ios and android -->
   <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black"> -->
+  <meta name="apple-mobile-web-app-title" content="PaediSurgery Pal">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
   <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="black">
 
   <!-- 'Vendor CSS' -->
   <link rel="stylesheet"
@@ -241,6 +246,12 @@
   <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
 
   <script>
+
+    if (navigator.standalone == true) {
+      alert('launched from the home screen')
+      // My app is installed and therefore fullscreen
+    }
+
     const mytasks = localStorage.getItem('tasks');
     const taskcount = document.getElementById('task-count')
     // if reference exists
