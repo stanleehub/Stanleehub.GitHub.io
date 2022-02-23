@@ -11,9 +11,9 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black"> -->
   <meta name="apple-mobile-web-app-title" content="PaediSurgery Pal">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport"
-    content="viewport-fit=cover, user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <!-- <meta name="viewport"
+    content="viewport-fit=cover, user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"> -->
 
 
   <meta name="mobile-web-app-capable" content="yes">
@@ -254,10 +254,10 @@
 
   <script>
 
-    if (navigator.standalone == true) {
-      alert('launched from the home screen')
-      // My app is installed and therefore fullscreen
-    }
+    // if (navigator.standalone == true) {
+    //   alert('launched from the home screen')
+    //   // My app is installed and therefore fullscreen
+    // }
 
     const mytasks = localStorage.getItem('tasks');
     const taskcount = document.getElementById('task-count')
