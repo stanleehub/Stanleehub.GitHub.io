@@ -59,11 +59,11 @@
       </div>
     </nav>
 
-    <div class="bottom-menu blurme py-10">
+    <div class="bottom-menu bg-white bg-dark-dm py-10">
       <div class="d-flex justify-content-around">
         <form>
-          <div class="input-group px-20">
-            <div class="w-100">
+          <div class="input-group input-group-lg px-20">
+            <div class="w-100 input-group-lg">
               <select class="input-group-prepend form-control" id="task-type" size="3">
                 <option selected="selected" value="TODO">TODO:</option>
                 <option value="CHASE">CHASE:</option>
@@ -71,12 +71,16 @@
               </select>
             </div>
 
-            <input type="text" class="form-control" placeholder="Enter details" required="required" id="task-entry">
+            <input type="text" class="form-control" placeholder="Enter task" required="required" id="task-entry">
             <div class="input-group-append">
               <button class="btn" type="submit" onclick="addTask();return false">
                 <i class="la la-plus font-size-22" aria-hidden="true"></i>
-                <!-- <span class="sr-only-focusable">Add Task</span> sr-only = show only on screen readers -->
               </button>
+
+              <button class="btn" type="submit" onclick="deleteAll();return false">
+                <i class="la la-trash font-size-22" aria-hidden="true"></i>
+              </button>
+
             </div>
         </form>
 
@@ -214,6 +218,14 @@
       AddToLocalStorage(AllTasks);
     }
 
+    function deleteAll() {
+      let isSure = confirm("Delete all Tasks ?")
+      if (isSure) {
+        localStorage.removeItem('tasks')
+        AllTasks = []
+        renderTodos(AllTasks)
+      }
+    }
 
       // reference for localStorage manipulation
       // https://thecodingpie.medium.com/how-to-build-a-todo-list-app-with-javascript-and-local-storage-a884f4ea3ec
