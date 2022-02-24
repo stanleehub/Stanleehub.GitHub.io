@@ -1,0 +1,7 @@
+.accordion{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+  animation-duration: 2;
+}
