@@ -5,3 +5,15 @@
   margin-top: 60px;
   animation-duration: 2;
 }
+
+.team-img{
+  width: 60px;
+  height: auto;
+}
+
+/* .team-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+ 
+} */

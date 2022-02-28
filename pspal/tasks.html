@@ -76,11 +76,6 @@
               <button class="btn" type="submit" onclick="addTask();return false">
                 <i class="la la-plus font-size-22" aria-hidden="true"></i>
               </button>
-
-              <button class="btn" type="submit" onclick="deleteAll();return false">
-                <i class="la la-trash font-size-22" aria-hidden="true"></i>
-              </button>
-
             </div>
         </form>
 
@@ -94,10 +89,8 @@
   <div class="content-wrapper pt-20">
     <div class="container-fluid">
 
-
+      <!-- dummy task  -->
       <div class="d-flex flex-wrap" id="task-list">
-
-        <!-- dummy task  -->
         <!-- <div class="card w-350 p-10 my-10">
                 <h2 class="card-title font-size-14 pb-0 mb-0">TODO:</h2>
                 <p class="font-size-14 p-0 m-0 text-primary">
@@ -109,12 +102,16 @@
                       class="la la-check font-size-18"></i></button>
                 </div>
               </div> -->
-
-
       </div>
 
-
-
+      <!-- DELETE ALL BUTTON  -->
+      <hr>
+      <div id="delete-all-button" class="text-center">
+        <button class="btn btn-danger mb-10" type="submit" onclick="deleteAll();return false">
+          <i class="la la-trash font-size-22" aria-hidden="true"></i>
+          Clear All
+        </button>
+      </div>
     </div>
 
   </div>
@@ -148,6 +145,15 @@
         // onclick="deleteTask(this)"
         list.insertBefore(t, list.children[0]);
       });
+
+      // Show delete all button if more than 1
+      delbox = document.getElementById('delete-all-button')
+      if (AllTasks.length > 1) {
+        delbox.classList.remove('invisible')
+      } else {
+        delbox.classList.add('invisible')
+
+      }
 
     }
 
